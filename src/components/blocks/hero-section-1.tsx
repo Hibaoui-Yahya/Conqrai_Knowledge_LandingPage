@@ -93,7 +93,7 @@ export function HeroSection() {
                                 size="lg"
                                 className="h-13 rounded-xl px-8 text-base font-bold bg-[#38b6ff] hover:bg-[#2a9edf] text-white transition-all shadow-lg shadow-[#38b6ff]/25 hover:shadow-[#38b6ff]/40 hover:-translate-y-0.5"
                             >
-                                <a href="#contact" className="flex items-center gap-2">
+                                <a href="mailto:hello@conqrai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                     Request a demo
                                     <ChevronRight className="size-4" />
                                 </a>
@@ -146,7 +146,6 @@ const menuItems = [
     { name: 'How it Works', href: '#how-it-works' },
     { name: 'Capabilities', href: '#capabilities' },
     { name: 'Industries', href: '#industries' },
-    { name: 'Contact', href: '#contact' },
 ]
 
 const HeroHeader = () => {
@@ -213,7 +212,7 @@ const HeroHeader = () => {
                                         </li>
                                     ))}
                                     <li>
-                                        <a href="https://app.conqrknowledge.com" className="text-[#9ca3af] hover:text-[#38b6ff] block duration-150">
+                                        <a href="https://app.conqrknowledge.com" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#38b6ff] block duration-150">
                                             <span>Login</span>
                                         </a>
                                     </li>
@@ -221,10 +220,10 @@ const HeroHeader = () => {
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit ml-4">
                                 <Button asChild variant="ghost" size="sm" className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#9ca3af] hover:text-[#38b6ff] transition-colors">
-                                    <a href="https://app.conqrknowledge.com"><span>Login</span></a>
+                                    <a href="https://app.conqrknowledge.com" target="_blank" rel="noopener noreferrer"><span>Login</span></a>
                                 </Button>
                                 <Button asChild size="sm" className="bg-[#38b6ff] hover:bg-[#2a9edf] text-white font-bold rounded-xl px-6 h-9 shadow-lg shadow-[#38b6ff]/20">
-                                    <a href="#contact"><span>Request a demo</span></a>
+                                    <a href="mailto:hello@conqrai.com" target="_blank" rel="noopener noreferrer"><span>Request a demo</span></a>
                                 </Button>
                             </div>
                         </div>

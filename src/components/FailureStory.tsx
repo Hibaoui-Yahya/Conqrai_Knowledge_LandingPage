@@ -59,7 +59,9 @@ const ProductVision = () => {
                         </div>
 
                         <a
-                            href="#contact"
+                            href="mailto:hello@conqrai.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111827] border border-[#1f2937] text-sm font-bold text-white hover:border-[#38b6ff]/30 transition-all group"
                         >
                             Request a demo

@@ -60,11 +60,11 @@ export default function Footer4Col() {
                         <div className="mt-8 space-y-3">
                             <div className="flex items-center gap-3 text-[#9ca3af] text-sm font-medium">
                                 <Mail className="size-4 text-[#38b6ff]" />
-                                <a href={`mailto:${data.contact.email}`} className="hover:text-[#38b6ff] transition-colors">{data.contact.email}</a>
+                                <a href={`mailto:${data.contact.email}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#38b6ff] transition-colors">{data.contact.email}</a>
                             </div>
                             <div className="flex items-center gap-3 text-[#9ca3af] text-sm font-medium">
                                 <Phone className="size-4 text-[#38b6ff]" />
-                                <a href={`tel:${data.contact.phone}`} className="hover:text-[#38b6ff] transition-colors">{data.contact.phone}</a>
+                                <a href={`tel:${data.contact.phone}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#38b6ff] transition-colors">{data.contact.phone}</a>
                             </div>
                             <div className="flex items-center gap-3 text-[#9ca3af] text-sm font-medium">
                                 <MapPin className="size-4 text-[#38b6ff]" />
@@ -95,7 +95,7 @@ export default function Footer4Col() {
                             <ul className="space-y-4 text-sm">
                                 {data.links.company.map((link) => (
                                     <li key={link.text}>
-                                        <a href={link.href} className="text-[#9ca3af] hover:text-[#38b6ff] transition-colors font-medium">{link.text}</a>
+                                        <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#38b6ff] transition-colors font-medium">{link.text}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -106,7 +106,7 @@ export default function Footer4Col() {
                             <ul className="space-y-4 text-sm">
                                 {data.links.solutions.map((link) => (
                                     <li key={link.text}>
-                                        <a href={link.href} className="text-[#9ca3af] hover:text-[#38b6ff] transition-colors font-medium">{link.text}</a>
+                                        <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#38b6ff] transition-colors font-medium">{link.text}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -117,7 +117,7 @@ export default function Footer4Col() {
                             <ul className="space-y-4 text-sm">
                                 {data.links.compliance.map((link) => (
                                     <li key={link.text}>
-                                        <a href={link.href} className="text-[#9ca3af] hover:text-[#38b6ff] transition-colors font-medium">{link.text}</a>
+                                        <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#38b6ff] transition-colors font-medium">{link.text}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -134,6 +134,8 @@ export default function Footer4Col() {
                             <a
                                 key={link.text}
                                 href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="text-[12px] font-bold text-[#6b7280] hover:text-[#38b6ff] transition-colors uppercase tracking-widest"
                             >
                                 {link.text}

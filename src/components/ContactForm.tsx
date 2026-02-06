@@ -44,7 +44,7 @@ const FinalCTA = () => {
                                 size="lg"
                                 className="h-14 rounded-xl px-10 text-base font-bold bg-[#38b6ff] hover:bg-[#2a9edf] text-white transition-all shadow-lg shadow-[#38b6ff]/25 hover:shadow-[#38b6ff]/40 hover:-translate-y-0.5"
                             >
-                                <a href="mailto:hello@conqrai.com" className="flex items-center gap-2">
+                                <a href="mailto:hello@conqrai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                     Talk to an expert
                                     <ChevronRight className="size-4" />
                                 </a>
