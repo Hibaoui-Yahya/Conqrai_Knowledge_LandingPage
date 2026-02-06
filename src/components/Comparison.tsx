@@ -2,11 +2,15 @@ import { motion } from 'framer-motion';
 import { X, Check } from 'lucide-react';
 
 const rows = [
-    { feature: "Answers", typical: "Generic answers", ours: "Context-aware intelligence" },
-    { feature: "Memory", typical: "Stateless chats", ours: "Persistent organizational memory" },
-    { feature: "Governance", typical: "No governance", ours: "Enterprise RBAC & validation" },
-    { feature: "Approach", typical: "AI replaces humans", ours: "AI amplifies experts" },
-    { feature: "Traceability", typical: "Black box outputs", ours: "Full source attribution" },
+    { feature: "Answers", typical: "Generic, context-free outputs", ours: "Context-aware intelligence backed by sources" },
+    { feature: "Memory", typical: "Stateless chats, no retention", ours: "Persistent organizational knowledge graph" },
+    { feature: "Governance", typical: "No governance or audit", ours: "Enterprise RBAC, validation & full audit trail" },
+    { feature: "Approach", typical: "AI replaces humans", ours: "AI amplifies human expertise" },
+    { feature: "Traceability", typical: "Black box outputs", ours: "Full source attribution & reasoning chains" },
+    { feature: "Deployment", typical: "Cloud-only, shared infra", ours: "On-premise, private cloud, or air-gapped" },
+    { feature: "Data Privacy", typical: "Data used for model training", ours: "Zero data leakage. Your data stays yours." },
+    { feature: "Integration", typical: "Limited API access", ours: "MCP Protocol. Connect to any platform." },
+    { feature: "Encryption", typical: "Basic TLS", ours: "AES-256 + TLS 1.3 + customer-managed keys" },
 ];
 
 const Comparison = () => {

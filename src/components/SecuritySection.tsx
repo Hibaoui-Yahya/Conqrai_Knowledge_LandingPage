@@ -1,4 +1,4 @@
-import { Layers, Brain, Search, Shield, Globe, Lock } from 'lucide-react';
+import { Layers, Brain, Search, Shield, Globe, Lock, Plug, Server, Key, Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const capabilities = [
@@ -9,6 +9,22 @@ const capabilities = [
                 {["PDF", "CSV", "IMG", "DOC", "JSON", "XLS"].map((type) => (
                     <span key={type} className="px-2 py-0.5 rounded-md text-[8px] font-bold bg-[#38b6ff]/8 text-[#38b6ff]/60 border border-[#38b6ff]/10">{type}</span>
                 ))}
+            </div>
+        ),
+    },
+    {
+        icon: Plug, title: "MCP Protocol Integration", desc: "Connect to any platform, database, or tool. Pull live data from ERP, CRM, CMMS, and more via Model Context Protocol.", color: "#f97316",
+        visual: (
+            <div className="mt-4 space-y-2">
+                <div className="flex items-center gap-2 flex-wrap">
+                    {["SAP", "Salesforce", "Jira", "SharePoint", "Slack", "S3"].map((platform) => (
+                        <span key={platform} className="px-2 py-0.5 rounded-md text-[8px] font-bold bg-[#f97316]/8 text-[#f97316]/60 border border-[#f97316]/10">{platform}</span>
+                    ))}
+                </div>
+                <div className="flex items-center gap-1.5 mt-1">
+                    <div className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[9px] text-emerald-400/70 font-medium">Real-time bidirectional sync</span>
+                </div>
             </div>
         ),
     },
@@ -46,6 +62,31 @@ const capabilities = [
         ),
     },
     {
+        icon: Server, title: "On-Premise Deployment", desc: "Deploy on your own servers, air-gapped environments, or private cloud. Your data never leaves your infrastructure.", color: "#06b6d4",
+        visual: (
+            <div className="mt-4 space-y-2">
+                <div className="flex items-center gap-2">
+                    {[
+                        { label: "Private Cloud", status: true },
+                        { label: "Air-Gapped", status: true },
+                        { label: "Hybrid", status: true },
+                    ].map((opt) => (
+                        <div key={opt.label} className="flex items-center gap-1 px-2 py-1 rounded-md bg-[#06b6d4]/5 border border-[#06b6d4]/10">
+                            <div className="size-1.5 rounded-full bg-emerald-400" />
+                            <span className="text-[8px] text-[#06b6d4]/70 font-medium">{opt.label}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className="rounded-md bg-[#0b0f14]/50 border border-[#1f2937]/30 p-2">
+                    <div className="flex items-center gap-1.5">
+                        <Lock size={10} className="text-[#06b6d4]/60" />
+                        <span className="text-[9px] text-[#06b6d4]/60 font-medium">Zero external data transfer</span>
+                    </div>
+                </div>
+            </div>
+        ),
+    },
+    {
         icon: Shield, title: "Enterprise Governance", desc: "Roles, permissions, validation workflows, and a complete audit trail.", color: "#f59e0b",
         visual: (
             <div className="mt-4 space-y-1.5">
@@ -61,6 +102,27 @@ const capabilities = [
                         </div>
                     </div>
                 ))}
+            </div>
+        ),
+    },
+    {
+        icon: Key, title: "End-to-End Encryption", desc: "AES-256 at rest, TLS 1.3 in transit. Customer-managed encryption keys. No plaintext data ever exposed.", color: "#6366f1",
+        visual: (
+            <div className="mt-4 space-y-1.5">
+                <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#6366f1]/5 border border-[#6366f1]/10">
+                        <div className="size-1.5 rounded-full bg-emerald-400" />
+                        <span className="text-[8px] text-[#e5e7eb]/60 font-medium">AES-256</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#6366f1]/5 border border-[#6366f1]/10">
+                        <div className="size-1.5 rounded-full bg-emerald-400" />
+                        <span className="text-[8px] text-[#e5e7eb]/60 font-medium">TLS 1.3</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#6366f1]/5 border border-[#6366f1]/10">
+                        <div className="size-1.5 rounded-full bg-emerald-400" />
+                        <span className="text-[8px] text-[#e5e7eb]/60 font-medium">BYOK</span>
+                    </div>
+                </div>
             </div>
         ),
     },
@@ -87,21 +149,20 @@ const capabilities = [
         ),
     },
     {
-        icon: Lock, title: "Secure Architecture", desc: "Private hosting, SSO integration, and data sovereignty by default.", color: "#6366f1",
+        icon: Eye, title: "Full Audit Trail", desc: "Every query, response, validation, and data access logged. Complete transparency for compliance officers.", color: "#14b8a6",
         visual: (
-            <div className="mt-4 flex items-center gap-3">
-                <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#6366f1]/5 border border-[#6366f1]/10">
-                    <div className="size-3 rounded-full bg-emerald-400/30 flex items-center justify-center">
-                        <div className="size-1.5 rounded-full bg-emerald-400" />
+            <div className="mt-4 space-y-1">
+                {[
+                    { time: "09:42", event: "Query: turbine specs", user: "S.Chen" },
+                    { time: "09:42", event: "AI response generated", user: "System" },
+                    { time: "09:43", event: "Expert validated", user: "M.Torres" },
+                ].map((log, i) => (
+                    <div key={i} className="flex items-center gap-2 px-2 py-1 rounded-md bg-[#0b0f14]/50">
+                        <span className="text-[7px] text-[#6b7280] font-mono w-8">{log.time}</span>
+                        <span className="text-[8px] text-[#14b8a6]/60 font-medium flex-1 truncate">{log.event}</span>
+                        <span className="text-[7px] text-[#6b7280] font-medium">{log.user}</span>
                     </div>
-                    <span className="text-[9px] text-[#e5e7eb]/60 font-medium">Encrypted</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#6366f1]/5 border border-[#6366f1]/10">
-                    <div className="size-3 rounded-full bg-emerald-400/30 flex items-center justify-center">
-                        <div className="size-1.5 rounded-full bg-emerald-400" />
-                    </div>
-                    <span className="text-[9px] text-[#e5e7eb]/60 font-medium">SOC 2</span>
-                </div>
+                ))}
             </div>
         ),
     },
