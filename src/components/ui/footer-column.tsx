@@ -36,7 +36,7 @@ const socialLinks = [
     { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/conqrai' },
 ];
 
-export default function Footer4Col() {
+export default function Footer4Col({ onOpenPage }: { onOpenPage?: (page: string) => void }) {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -126,15 +126,13 @@ export default function Footer4Col() {
                             &copy; {currentYear} {data.company.name}. All rights reserved.
                         </p>
                         {data.links.footer.map((link) => (
-                            <a
+                            <button
                                 key={link.text}
-                                href={link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[12px] font-bold text-[#6b7280] hover:text-[#38b6ff] transition-colors uppercase tracking-widest"
+                                onClick={() => onOpenPage?.(link.text)}
+                                className="text-[12px] font-bold text-[#6b7280] hover:text-[#38b6ff] transition-colors uppercase tracking-widest cursor-pointer"
                             >
                                 {link.text}
-                            </a>
+                            </button>
                         ))}
                     </div>
 
