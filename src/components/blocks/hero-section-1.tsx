@@ -67,15 +67,21 @@ export function HeroSection() {
                             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                             className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white leading-[1.05]"
                         >
-                            Your organization already
+                            Your teams make critical decisions
                             <br />
-                            has the{" "}
+                            without{" "}
                             <span className="text-gradient">
                                 <Typewriter
-                                    text={["answers", "knowledge", "expertise", "solutions", "intelligence"]}
-                                    speed={80}
-                                    deleteSpeed={40}
-                                    waitTime={2500}
+                                    text={[
+                                        "full context.",
+                                        "past lessons.",
+                                        "expert insights.",
+                                        "connected data.",
+                                        "the complete picture.",
+                                    ]}
+                                    speed={70}
+                                    deleteSpeed={35}
+                                    waitTime={2200}
                                     loop={true}
                                     className="text-gradient"
                                     cursorChar="|"
@@ -83,7 +89,7 @@ export function HeroSection() {
                                 />
                             </span>
                             <br />
-                            <span className="text-[#9ca3af]">They're just scattered.</span>
+                            <span className="text-[#9ca3af]">Not anymore.</span>
                         </motion.h1>
 
                         <motion.p
@@ -92,7 +98,7 @@ export function HeroSection() {
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                             className="mt-8 mx-auto max-w-2xl text-lg md:text-xl text-[#9ca3af] font-medium leading-relaxed"
                         >
-                            We transform documents, data, and human expertise into a single intelligent system that helps your teams decide faster and smarter.
+                            Conqrai Knowledge unifies your documents, data, and institutional memory into one AI-powered system where every answer is instant, accurate, and fully traceable.
                         </motion.p>
 
                         <motion.div
