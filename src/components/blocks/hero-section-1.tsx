@@ -173,7 +173,7 @@ const HeroHeader = () => {
                         <div className="flex w-full justify-between lg:w-auto">
                             <a href="/" aria-label="home" className="flex items-center">
                                 <img
-                                    src="/logo-light-removebg-preview.png"
+                                    src="/dark_mode_logo-removebg-preview.png"
                                     alt="Conqrai Logo"
                                     className={cn("h-8 w-auto transition-all duration-300", isScrolled && "h-6")}
                                 />

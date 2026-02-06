@@ -50,7 +50,7 @@ export default function Footer4Col() {
                 <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
                     <div className="max-w-xs">
                         <div className="flex items-center">
-                            <img src="/logo-light-removebg-preview.png" alt="Conqrai Logo" className="h-9 w-auto" />
+                            <img src="/dark_mode_logo-removebg-preview.png" alt="Conqrai Logo" className="h-9 w-auto" />
                         </div>
 
                         <p className="text-[#9ca3af] mt-6 leading-relaxed text-[14px] font-medium">
