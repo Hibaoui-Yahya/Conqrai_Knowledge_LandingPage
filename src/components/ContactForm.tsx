@@ -1,116 +1,46 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const ContactForm = () => {
-    const [submitted, setSubmitted] = useState(false);
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setSubmitted(true);
-    };
-
+const FinalCTA = () => {
     return (
-        <section id="contact" className="py-24 bg-primary relative overflow-hidden">
-            {/* Decorative Blur */}
-            <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/10 rounded-full blur-[80px]" />
+        <section id="contact" className="relative py-32 bg-[#0b0f14] overflow-hidden">
+            {/* Soft blue gradient glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#38b6ff] rounded-full opacity-[0.06] blur-[180px] pointer-events-none" />
 
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-                <div>
-                    <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight">
-                        Ready to turn your knowledge into <span className="text-blue-200">operational power?</span>
+            <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#e5e7eb] tracking-tighter leading-[1.1] mb-8">
+                        The future of organizations is not artificial intelligence.
+                        <br />
+                        <span className="text-[#38b6ff]">It's augmented intelligence.</span>
                     </h2>
-                    <p className="text-xl text-blue-100/80 mb-10 max-w-lg font-medium">
-                        Join forward-thinking engineering teams using Conqrai to eliminate hesitation and ensure perfect execution.
+
+                    <p className="text-lg md:text-xl text-[#9ca3af] font-medium max-w-2xl mx-auto mb-12">
+                        See how your knowledge becomes a strategic asset.
                     </p>
 
-                    <div className="space-y-6">
-                        <div className="flex gap-4 items-center text-white font-semibold">
-                            <CheckCircle2 className="text-blue-300" />
-                            Free deployment readiness audit
-                        </div>
-                        <div className="flex gap-4 items-center text-white font-semibold">
-                            <CheckCircle2 className="text-blue-300" />
-                            Enterprise-grade data sovereignty
-                        </div>
-                        <div className="flex gap-4 items-center text-white font-semibold">
-                            <CheckCircle2 className="text-blue-300" />
-                            Guided onboarding for your team
-                        </div>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Button
+                            asChild
+                            size="lg"
+                            className="h-14 rounded-xl px-10 text-base font-bold bg-[#38b6ff] hover:bg-[#2a9edf] text-white transition-all shadow-lg shadow-[#38b6ff]/20"
+                        >
+                            <a href="mailto:hello@conqrai.com">
+                                Talk to an expert
+                                <ArrowRight className="ml-2 size-4" />
+                            </a>
+                        </Button>
                     </div>
-                </div>
-
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="bg-white rounded-[32px] p-10 shadow-2xl border border-white/20"
-                >
-                    {submitted ? (
-                        <div className="text-center py-10">
-                            <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <CheckCircle2 size={40} />
-                            </div>
-                            <h3 className="text-2xl font-bold text-slate-900 mb-2">Inquiry Submitted</h3>
-                            <p className="text-slate-500 font-medium">An enterprise solutions architect will contact you shortly.</p>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">Full Name</label>
-                                    <input required type="text" className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-300" placeholder="John Doe" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">Work Email</label>
-                                    <input required type="email" className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-300" placeholder="john@enterprise.com" />
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">Organization</label>
-                                    <input required type="text" className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-300" placeholder="Corporation Name" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">Company Size</label>
-                                    <select required className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 bg-none cursor-pointer">
-                                        <option value="">Select size...</option>
-                                        <option value="100-500">100 - 500</option>
-                                        <option value="500-2000">500 - 2,000</option>
-                                        <option value="2000-10000">2,000 - 10,000</option>
-                                        <option value="10000+">10,000+</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">Primary Industry</label>
-                                <select required className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 bg-none cursor-pointer">
-                                    <option value="">Select industry...</option>
-                                    <option value="manufacturing">Manufacturing & Heavy Industry</option>
-                                    <option value="energy">Energy & Utilities</option>
-                                    <option value="aerospace">Aerospace & Defense</option>
-                                    <option value="pharmaceutical">Pharmaceuticals</option>
-                                    <option value="logistics">Logistics & Supply Chain</option>
-                                </select>
-                            </div>
-
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest pl-1">Strategic Requirement</label>
-                                <textarea rows={3} className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-300" placeholder="Describe your operational knowledge challenges..." />
-                            </div>
-
-                            <button type="submit" className="w-full bg-slate-900 text-white py-5 rounded-xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary transition-all shadow-xl shadow-slate-900/10">
-                                Book Implementation Review
-                                <Send size={20} />
-                            </button>
-                        </form>
-                    )}
                 </motion.div>
             </div>
         </section>
     );
 };
 
-export default ContactForm;
+export default FinalCTA;

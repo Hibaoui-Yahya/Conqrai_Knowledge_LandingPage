@@ -1,62 +1,75 @@
 import { motion } from 'framer-motion';
-import { Clock, MessageSquareOff, AlertCircle, ZapOff, FileWarning, ShieldAlert } from 'lucide-react';
+import { UserX, FileText, RefreshCcw, Unplug } from 'lucide-react';
+
+const painPoints = [
+    {
+        icon: UserX,
+        text: "Critical expertise leaves with people",
+    },
+    {
+        icon: FileText,
+        text: "PDFs, schemas, emails stay unused",
+    },
+    {
+        icon: RefreshCcw,
+        text: "Teams repeat the same errors",
+    },
+    {
+        icon: Unplug,
+        text: "AI tools lack context and trust",
+    },
+];
 
 const ProblemStory = () => {
-    const cards = [
-        {
-            title: "Institutional Memory Loss",
-            items: [
-                { icon: Clock, text: "Technical teams waste 30% of high-value hours searching for legacy data." },
-                { icon: MessageSquareOff, text: "Critical senior expertise is bottlenecked by repetitive consultations." },
-                { icon: AlertCircle, text: "Tribal knowledge evaporates with every employee retirement or transition." },
-            ],
-            highlight: false
-        },
-        {
-            title: "The Implementation Gap",
-            items: [
-                { icon: ZapOff, text: "Static SOPs fail to provide clarity in high-pressure operational scenarios." },
-                { icon: FileWarning, text: "Maintenance teams rely on recollection, introducing avoidable rework." },
-                { icon: ShieldAlert, text: "Procedural ambiguity leads to overlooked safety protocols and risk." },
-            ],
-            highlight: true
-        }
-    ];
-
     return (
-        <section id="problem" className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-20">
-                    <div className="inline-block px-3 py-1 rounded-full bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border border-slate-100">The Operational Reality</div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                        Knowledge is everywhere.<br />
-                        <span className="text-primary">Answers are nowhere.</span>
-                    </h2>
-                    <p className="text-lg text-slate-500 max-w-xl mx-auto font-medium leading-relaxed">
-                        In complex operations, the gap between having a manual and executing a procedure is where errors happen.
-                    </p>
-                </div>
+        <section className="relative py-28 bg-[#0e1117] overflow-hidden">
+            {/* Subtle background */}
+            <div className="absolute inset-0 bg-grid opacity-50" />
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {cards.map((card, idx) => (
+            <div className="relative z-10 max-w-5xl mx-auto px-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#e5e7eb] tracking-tighter leading-[1.1] mb-6">
+                        Knowledge is everywhere.
+                        <br />
+                        <span className="text-[#38b6ff]">Intelligence is nowhere.</span>
+                    </h2>
+                </motion.div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    {painPoints.map((point, idx) => (
                         <motion.div
                             key={idx}
-                            className={`p-8 md:p-12 rounded-3xl border ${card.highlight ? 'bg-slate-50 border-slate-200' : 'bg-white border-slate-100 shadow-sm'}`}
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1, duration: 0.5 }}
+                            className="flex items-start gap-4 p-6 rounded-2xl bg-[#111827]/60 border border-[#1f2937] hover:border-[#38b6ff]/20 transition-colors"
                         >
-                            <h3 className="text-xl font-bold text-slate-900 mb-8">{card.title}</h3>
-                            <ul className="space-y-5">
-                                {card.items.map((item, i) => (
-                                    <li key={i} className="flex gap-4 items-start">
-                                        <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0 border border-slate-100">
-                                            <item.icon size={16} />
-                                        </div>
-                                        <p className="text-[17px] font-semibold text-slate-600 leading-snug pt-0.5">{item.text}</p>
-                                    </li>
-                                ))}
-                            </ul>
+                            <div className="w-10 h-10 rounded-xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff] flex-shrink-0">
+                                <point.icon size={20} />
+                            </div>
+                            <p className="text-[17px] font-semibold text-[#9ca3af] leading-snug pt-1.5">
+                                {point.text}
+                            </p>
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 0.6 }}
+                    className="mt-14 text-center text-lg md:text-xl text-[#9ca3af] font-medium italic max-w-2xl mx-auto"
+                >
+                    Enterprises don't suffer from lack of data — they suffer from lack of memory.
+                </motion.p>
             </div>
         </section>
     );

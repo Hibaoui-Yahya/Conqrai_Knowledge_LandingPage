@@ -1,56 +1,50 @@
 import { motion } from 'framer-motion';
 
-const FailureStory = () => {
+const ProductVision = () => {
     return (
-        <section id="failure-story" className="py-24 bg-slate-50 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:24px_24px]" />
+        <section className="relative py-28 bg-[#0e1117] overflow-hidden">
+            <div className="absolute inset-0 bg-grid opacity-30" />
 
-            <div className="max-w-4xl mx-auto px-6 relative">
+            <div className="relative z-10 max-w-4xl mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-[40px] p-12 md:p-16 border border-slate-200 shadow-xl text-center"
+                    transition={{ duration: 0.6 }}
+                    className="text-center"
                 >
-                    <div className="inline-block px-3 py-1 rounded-full bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-8 border border-slate-100">Risk & Resilience</div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12 leading-[1.1] tracking-tight">
-                        “The Knowledge Already Existed.”
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#e5e7eb] tracking-tighter leading-[1.1] mb-10">
+                        AI that understands your business —
+                        <br />
+                        <span className="text-[#38b6ff]">not just your words.</span>
                     </h2>
 
-                    <div className="space-y-8 text-left text-lg md:text-xl text-slate-600 leading-relaxed font-medium">
-                        <p className="text-center font-semibold text-slate-400">In every major failure investigation, there is a sentence that appears again and again:</p>
-
-                        <motion.div
-                            whileInView={{ x: [0, 5, 0] }}
-                            className="bg-slate-50 border-l-4 border-primary rounded-r-xl p-8 my-10"
-                        >
-                            <blockquote className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
-                                “The information was available — but not at the moment it was needed.”
-                            </blockquote>
-                        </motion.div>
-
+                    <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-[#9ca3af] font-medium leading-relaxed">
                         <p>
-                            The manuals were written. The procedures were approved. The experts knew what to do. And yet… the failure still happened.
+                            Our platform doesn't replace experts.
+                            <br />
+                            <span className="text-[#e5e7eb] font-semibold">It preserves them.</span>
                         </p>
                         <p>
-                            Not because people were incompetent. Not because the knowledge was missing. But because under pressure, <span className="text-slate-900 font-bold decoration-primary/30 decoration-4 underline underline-offset-4">knowledge became unreachable.</span>
+                            It connects human judgment with operational data and makes it accessible, explainable, and reusable across the organization.
                         </p>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-10">
-                            <div>
-                                <h4 className="text-primary font-bold uppercase tracking-widest text-sm mb-4">The Invisible Gap</h4>
-                                <p className="text-base">Most disasters are caused by a gap between knowledge and execution. When documents are buried and experts are away, hesitation takes over.</p>
-                            </div>
-                            <div>
-                                <h4 className="text-primary font-bold uppercase tracking-widest text-sm mb-4">The Modern Reality</h4>
-                                <p className="text-base">Equipment is more complex, teams are distributed. Relying on "hope" is not a system. Conqrai exists to make action inevitable.</p>
-                            </div>
-                        </div>
                     </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3, duration: 0.5 }}
+                        className="mt-12 inline-block px-8 py-4 rounded-2xl bg-[#38b6ff]/10 border border-[#38b6ff]/20"
+                    >
+                        <p className="text-lg md:text-xl font-bold text-[#38b6ff]">
+                            Human-centered AI. Enterprise-grade by design.
+                        </p>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
     );
 };
 
-export default FailureStory;
+export default ProductVision;
