@@ -2,30 +2,19 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Users, ScanLine, Building } from 'lucide-react';
 
 const signals = [
-    {
-        icon: ShieldCheck,
-        text: "Designed for regulated environments",
-    },
-    {
-        icon: ScanLine,
-        text: "Secure architecture",
-    },
-    {
-        icon: Users,
-        text: "Human-in-the-loop by default",
-    },
-    {
-        icon: Building,
-        text: "Scales across departments and companies",
-    },
+    { icon: ShieldCheck, title: "Regulated Environments", text: "Built for industries where compliance is not optional." },
+    { icon: ScanLine, title: "Secure Architecture", text: "Private hosting, encryption, and data sovereignty by default." },
+    { icon: Users, title: "Human-in-the-Loop", text: "Every AI output can be reviewed and validated by domain experts." },
+    { icon: Building, title: "Enterprise Scale", text: "Deploy across departments, sites, and subsidiaries seamlessly." },
 ];
 
 const TrustSignals = () => {
     return (
-        <section className="relative py-28 bg-[#0e1117] overflow-hidden">
-            <div className="absolute inset-0 bg-grid opacity-30" />
+        <section className="relative py-24 md:py-32 bg-[#0b0f14] overflow-hidden">
+            <div className="absolute inset-0 bg-dots" />
+            <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-[#38b6ff] rounded-full opacity-[0.03] blur-[150px] pointer-events-none" />
 
-            <div className="relative z-10 max-w-5xl mx-auto px-6">
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -33,25 +22,29 @@ const TrustSignals = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#e5e7eb] tracking-tighter leading-[1.1]">
-                        Enterprise-ready <span className="text-[#38b6ff]">from day one.</span>
+                    <span className="section-badge">Trust & Security</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[1.05]">
+                        Enterprise-ready
+                        <br />
+                        <span className="text-gradient">from day one.</span>
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
                     {signals.map((signal, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 15 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.5 }}
-                            className="flex items-center gap-4 p-6 rounded-2xl bg-[#111827]/60 border border-[#1f2937] hover:border-[#38b6ff]/20 transition-colors"
+                            className="group glass-card-strong rounded-2xl p-7 card-hover"
                         >
-                            <div className="w-10 h-10 rounded-xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff] flex-shrink-0">
-                                <signal.icon size={20} />
+                            <div className="size-12 rounded-2xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff] mb-5 group-hover:bg-[#38b6ff] group-hover:text-white transition-all duration-500">
+                                <signal.icon size={22} />
                             </div>
-                            <p className="text-[16px] font-semibold text-[#e5e7eb]">{signal.text}</p>
+                            <h3 className="text-lg font-bold text-white mb-2 tracking-tight">{signal.title}</h3>
+                            <p className="text-sm text-[#9ca3af] font-medium leading-relaxed">{signal.text}</p>
                         </motion.div>
                     ))}
                 </div>

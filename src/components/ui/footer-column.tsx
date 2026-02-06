@@ -45,8 +45,8 @@ export default function Footer4Col() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-[#0b0f14] border-t border-[#1f2937] w-full">
-            <div className="mx-auto max-w-screen-xl px-6 pt-16 pb-8 lg:px-8 lg:pt-24">
+        <footer className="relative bg-[#0b0f14] border-t border-[#1f2937]/60 w-full">
+            <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 lg:px-8 lg:pt-20">
                 <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
                     <div className="max-w-xs">
                         <div className="flex items-center">
@@ -72,14 +72,14 @@ export default function Footer4Col() {
                             </div>
                         </div>
 
-                        <ul className="mt-8 flex gap-4">
+                        <ul className="mt-8 flex gap-3">
                             {socialLinks.map(({ icon: Icon, label, href }) => (
                                 <li key={label}>
                                     <a
                                         href={href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex size-10 items-center justify-center rounded-lg border border-[#1f2937] bg-[#111827] text-[#9ca3af] hover:text-[#38b6ff] hover:border-[#38b6ff]/30 transition-all"
+                                        className="flex size-10 items-center justify-center rounded-xl glass-card-strong text-[#9ca3af] hover:text-[#38b6ff] hover:border-[#38b6ff]/30 transition-all"
                                     >
                                         <span className="sr-only">{label}</span>
                                         <Icon className="size-5" />
@@ -125,23 +125,23 @@ export default function Footer4Col() {
                     </div>
                 </div>
 
-                <div className="mt-16 border-t border-[#1f2937] pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="mt-16 border-t border-[#1f2937]/60 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-8 gap-y-2">
-                        <p className="text-[13px] font-bold text-[#9ca3af] tracking-tight uppercase">
+                        <p className="text-[13px] font-bold text-[#6b7280] tracking-tight uppercase">
                             &copy; {currentYear} {data.company.name}. All rights reserved.
                         </p>
                         {data.links.footer.map((link) => (
                             <a
                                 key={link.text}
                                 href={link.href}
-                                className="text-[12px] font-bold text-[#9ca3af] hover:text-[#38b6ff] transition-colors uppercase tracking-widest"
+                                className="text-[12px] font-bold text-[#6b7280] hover:text-[#38b6ff] transition-colors uppercase tracking-widest"
                             >
                                 {link.text}
                             </a>
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-1.5 text-[12px] font-bold text-[#9ca3af]">
+                    <div className="flex items-center gap-1.5 text-[12px] font-bold text-[#6b7280]">
                         <div className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         <span>Systems Operational</span>
                     </div>
