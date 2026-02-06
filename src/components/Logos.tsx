@@ -1,25 +1,25 @@
 import { motion } from 'framer-motion';
-import { Building4, Airplane, Flash, Microscope, Building } from 'iconsax-react';
+import { Factory, Plane, Bolt, FlaskConical, Building2 } from 'lucide-react';
 
 const industries = [
     {
-        icon: Building4, name: "Engineering & Manufacturing", desc: "Unify SOPs, maintenance procedures, and field knowledge.",
+        icon: Factory, name: "Engineering & Manufacturing", desc: "Unify SOPs, maintenance procedures, and field knowledge.",
         stats: { value: "340+", label: "SOPs unified" }, color: "#38b6ff",
     },
     {
-        icon: Airplane, name: "Aerospace & Automotive", desc: "Ensure compliance with traceable, validated answers.",
+        icon: Plane, name: "Aerospace & Automotive", desc: "Ensure compliance with traceable, validated answers.",
         stats: { value: "99.2%", label: "Compliance rate" }, color: "#a78bfa",
     },
     {
-        icon: Flash, name: "Energy & Infrastructure", desc: "Preserve decades of operational expertise digitally.",
+        icon: Bolt, name: "Energy & Infrastructure", desc: "Preserve decades of operational expertise digitally.",
         stats: { value: "25yr+", label: "Knowledge preserved" }, color: "#34d399",
     },
     {
-        icon: Microscope, name: "R&D and Operations", desc: "Accelerate innovation with connected research data.",
+        icon: FlaskConical, name: "R&D and Operations", desc: "Accelerate innovation with connected research data.",
         stats: { value: "4x", label: "Faster research" }, color: "#f59e0b",
     },
     {
-        icon: Building, name: "Digital Transformation", desc: "Bridge the gap between legacy systems and modern AI.",
+        icon: Building2, name: "Digital Transformation", desc: "Bridge the gap between legacy systems and modern AI.",
         stats: { value: "60%", label: "Cost reduction" }, color: "#ec4899",
     },
 ];
@@ -62,7 +62,7 @@ const WhoItsFor = () => {
                                     className="size-12 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
                                     style={{ backgroundColor: `${ind.color}12`, color: ind.color }}
                                 >
-                                    <ind.icon size={24} variant="TwoTone" />
+                                    <ind.icon size={24} />
                                 </div>
                                 {/* Mini stat badge */}
                                 <div className="text-right">

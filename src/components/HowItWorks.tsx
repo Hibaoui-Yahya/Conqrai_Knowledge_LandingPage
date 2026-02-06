@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { Import, Hierarchy3, Flash } from 'iconsax-react';
+import { Download, GitMerge, Zap } from 'lucide-react';
 import KnowledgeFlowSVG from '@/components/visuals/KnowledgeFlowSVG';
 
 const cards = [
     {
-        icon: Import,
+        icon: Download,
         step: "01",
         title: "Capture",
         desc: "Documents, diagrams, tables, expert insights. Ingested into one unified knowledge base.",
@@ -32,7 +32,7 @@ const cards = [
         ),
     },
     {
-        icon: Hierarchy3,
+        icon: GitMerge,
         step: "02",
         title: "Connect",
         desc: "Context, history, decisions, reasoning. Linked together into an intelligent graph.",
@@ -69,7 +69,7 @@ const cards = [
         ),
     },
     {
-        icon: Flash,
+        icon: Zap,
         step: "03",
         title: "Act",
         desc: "AI-assisted answers, recommendations, traceability. Delivered at the moment of need.",
@@ -147,7 +147,7 @@ const HowItWorks = () => {
                                     color: card.color,
                                 }}
                             >
-                                <card.icon size={26} variant="TwoTone" />
+                                <card.icon size={26} />
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{card.title}</h3>
                             <p className="text-[#9ca3af] font-medium leading-relaxed text-[15px]">{card.desc}</p>

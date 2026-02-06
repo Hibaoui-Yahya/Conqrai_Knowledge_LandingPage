@@ -1,14 +1,14 @@
 import React from 'react'
-import { ArrowRight2, HambergerMenu, CloseSquare, People, Chart21, ShieldTick, ArrowRight3 } from 'iconsax-react'
+import { ArrowRight, Menu, X, Users, BarChart3, Shield, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import DashboardMockup from '@/components/visuals/DashboardMockup'
 
 const stats = [
-    { icon: People, value: "98%", label: "Client Satisfaction" },
-    { icon: Chart21, value: "4x", label: "Faster Decisions" },
-    { icon: ShieldTick, value: "100%", label: "Traceable Answers" },
+    { icon: Users, value: "98%", label: "Client Satisfaction" },
+    { icon: BarChart3, value: "4x", label: "Faster Decisions" },
+    { icon: Shield, value: "100%", label: "Traceable Answers" },
 ]
 
 export function HeroSection() {
@@ -95,7 +95,7 @@ export function HeroSection() {
                             >
                                 <a href="mailto:hello@conqrai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                     Request a demo
-                                    <ArrowRight3 className="size-4" variant="TwoTone" />
+                                    <ChevronRight className="size-4" />
                                 </a>
                             </Button>
                             <Button
@@ -106,7 +106,7 @@ export function HeroSection() {
                             >
                                 <a href="#how-it-works" className="flex items-center gap-2">
                                     See how it works
-                                    <ArrowRight2 className="size-4" variant="TwoTone" />
+                                    <ArrowRight className="size-4" />
                                 </a>
                             </Button>
                         </motion.div>
@@ -123,7 +123,7 @@ export function HeroSection() {
                             {stats.map((stat, idx) => (
                                 <div key={idx} className="flex items-center gap-3 px-8 py-3">
                                     <div className="size-10 rounded-xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff]">
-                                        <stat.icon size={18} variant="TwoTone" />
+                                        <stat.icon size={18} />
                                     </div>
                                     <div>
                                         <div className="text-2xl font-black text-white tracking-tight stat-glow">{stat.value}</div>
@@ -146,6 +146,7 @@ const menuItems = [
     { name: 'How it Works', href: '#how-it-works' },
     { name: 'Capabilities', href: '#capabilities' },
     { name: 'Industries', href: '#industries' },
+    { name: 'Contact', href: '#contact' },
 ]
 
 const HeroHeader = () => {
@@ -182,8 +183,8 @@ const HeroHeader = () => {
                                 onClick={() => setMenuState(!menuState)}
                                 aria-label={menuState ? 'Close Menu' : 'Open Menu'}
                                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <HambergerMenu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 text-[#e5e7eb] duration-200" variant="TwoTone" />
-                                <CloseSquare className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 text-[#e5e7eb] -rotate-180 scale-0 opacity-0 duration-200" variant="TwoTone" />
+                                <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 text-[#e5e7eb] duration-200" />
+                                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 text-[#e5e7eb] -rotate-180 scale-0 opacity-0 duration-200" />
                             </button>
                         </div>
 

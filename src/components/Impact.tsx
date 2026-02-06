@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { ShieldTick, People, Driver, Lock1, ClipboardTick, Data2, FingerScan, CloudCross } from 'iconsax-react';
+import { ShieldCheck, Users, Server, Lock, FileCheck, Database, Fingerprint, CloudOff } from 'lucide-react';
 
 const signals = [
     {
-        icon: Driver, title: "On-Premise & Private Cloud", text: "Deploy entirely within your own infrastructure. Air-gapped, private cloud, or hybrid. Your data never touches external servers.",
+        icon: Server, title: "On-Premise & Private Cloud", text: "Deploy entirely within your own infrastructure. Air-gapped, private cloud, or hybrid. Your data never touches external servers.",
         visual: (
             <div className="mt-4 space-y-2">
                 <div className="rounded-lg bg-[#0b0f14]/50 border border-[#1f2937]/30 p-2.5">
@@ -23,7 +23,7 @@ const signals = [
         ),
     },
     {
-        icon: CloudCross, title: "Zero Data Leakage", text: "No training on your data. No external API calls. No telemetry. Complete isolation ensures nothing leaves your environment.",
+        icon: CloudOff, title: "Zero Data Leakage", text: "No training on your data. No external API calls. No telemetry. Complete isolation ensures nothing leaves your environment.",
         visual: (
             <div className="mt-4 space-y-1.5">
                 {[
@@ -43,7 +43,7 @@ const signals = [
         ),
     },
     {
-        icon: ShieldTick, title: "Regulatory Compliance", text: "Built for regulated industries. SOC 2 Type II, GDPR, HIPAA, ISO 27001 ready. Continuous compliance monitoring.",
+        icon: ShieldCheck, title: "Regulatory Compliance", text: "Built for regulated industries. SOC 2 Type II, GDPR, HIPAA, ISO 27001 ready. Continuous compliance monitoring.",
         visual: (
             <div className="mt-4 flex flex-wrap gap-1.5">
                 {["SOC 2 II", "GDPR", "HIPAA", "ISO 27001", "CCPA", "PIPEDA"].map((badge) => (
@@ -53,7 +53,7 @@ const signals = [
         ),
     },
     {
-        icon: Lock1, title: "End-to-End Encryption", text: "AES-256 encryption at rest, TLS 1.3 in transit. Customer-managed keys (BYOK). Zero-knowledge architecture.",
+        icon: Lock, title: "End-to-End Encryption", text: "AES-256 encryption at rest, TLS 1.3 in transit. Customer-managed keys (BYOK). Zero-knowledge architecture.",
         visual: (
             <div className="mt-4 rounded-lg bg-[#0b0f14]/50 border border-[#1f2937]/30 p-2.5">
                 <div className="flex items-center justify-between mb-2">
@@ -76,7 +76,7 @@ const signals = [
         ),
     },
     {
-        icon: People, title: "Human-in-the-Loop Validation", text: "Every AI output can be reviewed and validated by domain experts before it enters the knowledge base.",
+        icon: Users, title: "Human-in-the-Loop Validation", text: "Every AI output can be reviewed and validated by domain experts before it enters the knowledge base.",
         visual: (
             <div className="mt-4 flex items-center gap-3">
                 <div className="flex -space-x-2">
@@ -97,7 +97,7 @@ const signals = [
         ),
     },
     {
-        icon: FingerScan, title: "SSO & Identity Management", text: "SAML 2.0, OAuth, Active Directory, LDAP integration. Multi-factor authentication enforced organization-wide.",
+        icon: Fingerprint, title: "SSO & Identity Management", text: "SAML 2.0, OAuth, Active Directory, LDAP integration. Multi-factor authentication enforced organization-wide.",
         visual: (
             <div className="mt-4 flex flex-wrap gap-1.5">
                 {["SAML 2.0", "OAuth", "LDAP", "AD", "MFA"].map((proto) => (
@@ -107,7 +107,7 @@ const signals = [
         ),
     },
     {
-        icon: Data2, title: "Data Sovereignty", text: "Choose where your data lives. Regional deployment ensures compliance with local data residency laws.",
+        icon: Database, title: "Data Sovereignty", text: "Choose where your data lives. Regional deployment ensures compliance with local data residency laws.",
         visual: (
             <div className="mt-4 grid grid-cols-3 gap-1.5">
                 {[
@@ -124,7 +124,7 @@ const signals = [
         ),
     },
     {
-        icon: ClipboardTick, title: "Complete Audit Trail", text: "Every query, response, access, and modification logged with timestamps. Immutable audit logs for compliance auditors.",
+        icon: FileCheck, title: "Complete Audit Trail", text: "Every query, response, access, and modification logged with timestamps. Immutable audit logs for compliance auditors.",
         visual: (
             <div className="mt-4 space-y-1">
                 {[
@@ -180,7 +180,7 @@ const TrustSignals = () => {
                             className="group glass-card-strong rounded-2xl p-6 card-hover"
                         >
                             <div className="size-11 rounded-xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff] mb-4 group-hover:bg-[#38b6ff] group-hover:text-white transition-all duration-500">
-                                <signal.icon size={20} variant="TwoTone" />
+                                <signal.icon size={20} />
                             </div>
                             <h3 className="text-base font-bold text-white mb-2 tracking-tight">{signal.title}</h3>
                             <p className="text-[13px] text-[#9ca3af] font-medium leading-relaxed">{signal.text}</p>

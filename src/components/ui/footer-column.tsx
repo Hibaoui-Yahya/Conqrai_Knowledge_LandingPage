@@ -1,4 +1,4 @@
-import { Sms, Location, Call } from 'iconsax-react';
+import { Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const data = {
     contact: {
@@ -32,14 +32,8 @@ const data = {
     }
 };
 
-const LinkedinIcon = ({ className }: { className?: string }) => (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-);
-
 const socialLinks = [
-    { icon: LinkedinIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/company/conqrai' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/conqrai' },
 ];
 
 export default function Footer4Col() {
@@ -60,15 +54,15 @@ export default function Footer4Col() {
 
                         <div className="mt-8 space-y-3">
                             <div className="flex items-center gap-3 text-[#9ca3af] text-sm font-medium">
-                                <Sms className="size-4 text-[#38b6ff]" variant="TwoTone" />
+                                <Mail className="size-4 text-[#38b6ff]" />
                                 <a href={`mailto:${data.contact.email}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#38b6ff] transition-colors">{data.contact.email}</a>
                             </div>
                             <div className="flex items-center gap-3 text-[#9ca3af] text-sm font-medium">
-                                <Call className="size-4 text-[#38b6ff]" variant="TwoTone" />
+                                <Phone className="size-4 text-[#38b6ff]" />
                                 <a href={`tel:${data.contact.phone}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#38b6ff] transition-colors">{data.contact.phone}</a>
                             </div>
                             <div className="flex items-center gap-3 text-[#9ca3af] text-sm font-medium">
-                                <Location className="size-4 text-[#38b6ff]" variant="TwoTone" />
+                                <MapPin className="size-4 text-[#38b6ff]" />
                                 <span>{data.contact.address}</span>
                             </div>
                         </div>
