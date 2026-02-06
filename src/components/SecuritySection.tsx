@@ -1,9 +1,9 @@
-import { Layers, Brain, Search, Shield, Globe, Lock, Plug, Server, Key, Eye } from 'lucide-react';
+import { Layer, Cpu, SearchNormal1, ShieldTick, Global, Lock1, Electricity, Driver, Key, Eye } from 'iconsax-react';
 import { motion } from 'framer-motion';
 
 const capabilities = [
     {
-        icon: Layers, title: "Multimodal Knowledge Ingestion", desc: "Text, tables, schemas, images, diagrams, reports. All formats, one system.", color: "#38b6ff",
+        icon: Layer, title: "Multimodal Knowledge Ingestion", desc: "Text, tables, schemas, images, diagrams, reports. All formats, one system.", color: "#38b6ff",
         visual: (
             <div className="mt-4 flex flex-wrap gap-1.5">
                 {["PDF", "CSV", "IMG", "DOC", "JSON", "XLS"].map((type) => (
@@ -13,7 +13,7 @@ const capabilities = [
         ),
     },
     {
-        icon: Plug, title: "MCP Protocol Integration", desc: "Connect to any platform, database, or tool. Pull live data from ERP, CRM, CMMS, and more via Model Context Protocol.", color: "#f97316",
+        icon: Electricity, title: "MCP Protocol Integration", desc: "Connect to any platform, database, or tool. Pull live data from ERP, CRM, CMMS, and more via Model Context Protocol.", color: "#f97316",
         visual: (
             <div className="mt-4 space-y-2">
                 <div className="flex items-center gap-2 flex-wrap">
@@ -29,7 +29,7 @@ const capabilities = [
         ),
     },
     {
-        icon: Brain, title: "Expert Insight Layer", desc: "Capture human warnings, context, and field-proven decisions alongside data.", color: "#a78bfa",
+        icon: Cpu, title: "Expert Insight Layer", desc: "Capture human warnings, context, and field-proven decisions alongside data.", color: "#a78bfa",
         visual: (
             <div className="mt-4 space-y-1.5">
                 {["Warning: Check valve tolerance", "Best practice: Pre-heat phase"].map((note, i) => (
@@ -42,7 +42,7 @@ const capabilities = [
         ),
     },
     {
-        icon: Search, title: "Explainable AI Responses", desc: "Every answer comes with sources, reasoning chains, and full traceability.", color: "#34d399",
+        icon: SearchNormal1, title: "Explainable AI Responses", desc: "Every answer comes with sources, reasoning chains, and full traceability.", color: "#34d399",
         visual: (
             <div className="mt-4 rounded-lg bg-[#0b0f14]/50 border border-[#1f2937]/30 p-2.5">
                 <div className="flex items-center gap-1.5 mb-1.5">
@@ -62,7 +62,7 @@ const capabilities = [
         ),
     },
     {
-        icon: Server, title: "On-Premise Deployment", desc: "Deploy on your own servers, air-gapped environments, or private cloud. Your data never leaves your infrastructure.", color: "#06b6d4",
+        icon: Driver, title: "On-Premise Deployment", desc: "Deploy on your own servers, air-gapped environments, or private cloud. Your data never leaves your infrastructure.", color: "#06b6d4",
         visual: (
             <div className="mt-4 space-y-2">
                 <div className="flex items-center gap-2">
@@ -79,7 +79,7 @@ const capabilities = [
                 </div>
                 <div className="rounded-md bg-[#0b0f14]/50 border border-[#1f2937]/30 p-2">
                     <div className="flex items-center gap-1.5">
-                        <Lock size={10} className="text-[#06b6d4]/60" />
+                        <Lock1 size={10} className="text-[#06b6d4]/60" variant="TwoTone" />
                         <span className="text-[9px] text-[#06b6d4]/60 font-medium">Zero external data transfer</span>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const capabilities = [
         ),
     },
     {
-        icon: Shield, title: "Enterprise Governance", desc: "Roles, permissions, validation workflows, and a complete audit trail.", color: "#f59e0b",
+        icon: ShieldTick, title: "Enterprise Governance", desc: "Roles, permissions, validation workflows, and a complete audit trail.", color: "#f59e0b",
         visual: (
             <div className="mt-4 space-y-1.5">
                 {[
@@ -127,7 +127,7 @@ const capabilities = [
         ),
     },
     {
-        icon: Globe, title: "Cross-Department Scaling", desc: "Deploy once, scale across teams, sites, and business units seamlessly.", color: "#ec4899",
+        icon: Global, title: "Cross-Department Scaling", desc: "Deploy once, scale across teams, sites, and business units seamlessly.", color: "#ec4899",
         visual: (
             <div className="mt-4 flex items-center justify-center gap-3">
                 {["HQ", "EU", "APAC"].map((site, i) => (
@@ -207,7 +207,7 @@ const CoreCapabilities = () => {
                                 className="size-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-500 group-hover:scale-110"
                                 style={{ backgroundColor: `${cap.color}12`, color: cap.color }}
                             >
-                                <cap.icon size={24} />
+                                <cap.icon size={24} variant="TwoTone" />
                             </div>
                             <h3 className="text-lg font-bold text-white mb-2 tracking-tight">{cap.title}</h3>
                             <p className="text-sm text-[#9ca3af] font-medium leading-relaxed">{cap.desc}</p>

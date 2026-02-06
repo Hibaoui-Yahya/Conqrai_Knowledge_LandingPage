@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { X, Check } from 'lucide-react';
+import { CloseCircle, TickCircle } from 'iconsax-react';
 
 const rows = [
     { feature: "Answers", typical: "Generic, context-free outputs", ours: "Context-aware intelligence backed by sources" },
@@ -49,7 +49,7 @@ const Comparison = () => {
                                     <th className="py-6 px-8 text-[11px] font-bold text-[#9ca3af] uppercase tracking-[0.2em]">
                                         <div className="flex items-center gap-2">
                                             <div className="size-5 rounded-md bg-[#1f2937] flex items-center justify-center">
-                                                <X className="size-3 text-[#9ca3af]" />
+                                                <CloseCircle className="size-3 text-[#9ca3af]" variant="TwoTone" />
                                             </div>
                                             Typical AI Tools
                                         </div>
@@ -57,7 +57,7 @@ const Comparison = () => {
                                     <th className="py-6 px-8 text-[11px] font-bold text-[#38b6ff] uppercase tracking-[0.2em] bg-[#38b6ff]/[0.03]">
                                         <div className="flex items-center gap-2">
                                             <div className="size-5 rounded-md bg-[#38b6ff]/15 flex items-center justify-center">
-                                                <Check className="size-3 text-[#38b6ff]" />
+                                                <TickCircle className="size-3 text-[#38b6ff]" variant="TwoTone" />
                                             </div>
                                             Conqrai Platform
                                         </div>

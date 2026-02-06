@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { TickCircle, ArrowRight2 } from 'iconsax-react';
 import NetworkGraph from '@/components/visuals/NetworkGraph';
 
 const features = [
@@ -52,7 +52,7 @@ const ProductVision = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                             {features.map((feature, idx) => (
                                 <div key={idx} className="flex items-center gap-3">
-                                    <CheckCircle2 className="size-5 text-[#38b6ff] flex-shrink-0" />
+                                    <TickCircle className="size-5 text-[#38b6ff] flex-shrink-0" variant="TwoTone" />
                                     <span className="text-sm font-semibold text-[#e5e7eb]">{feature}</span>
                                 </div>
                             ))}
@@ -65,7 +65,7 @@ const ProductVision = () => {
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111827] border border-[#1f2937] text-sm font-bold text-white hover:border-[#38b6ff]/30 transition-all group"
                         >
                             Request a demo
-                            <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
+                            <ArrowRight2 className="size-4 group-hover:translate-x-0.5 transition-transform" variant="TwoTone" />
                         </a>
                     </motion.div>
 

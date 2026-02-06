@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight2, ArrowRight3 } from 'iconsax-react';
 import { Button } from '@/components/ui/button';
 import AbstractBrain from '@/components/visuals/AbstractBrain';
 
@@ -46,7 +46,7 @@ const FinalCTA = () => {
                             >
                                 <a href="mailto:hello@conqrai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                     Talk to an expert
-                                    <ChevronRight className="size-4" />
+                                    <ArrowRight3 className="size-4" variant="TwoTone" />
                                 </a>
                             </Button>
                             <Button
@@ -57,7 +57,7 @@ const FinalCTA = () => {
                             >
                                 <a href="#how-it-works" className="flex items-center gap-2">
                                     Learn more
-                                    <ArrowRight className="size-4" />
+                                    <ArrowRight2 className="size-4" variant="TwoTone" />
                                 </a>
                             </Button>
                         </div>

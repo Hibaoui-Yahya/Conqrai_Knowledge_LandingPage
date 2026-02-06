@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { UserX, FileText, RefreshCcw, Unplug } from 'lucide-react';
+import { UserRemove, DocumentText, Refresh2, Link21 } from 'iconsax-react';
 
 const painPoints = [
     {
-        icon: UserX, title: "Expertise Walks Out", text: "Critical knowledge leaves with retiring employees and departing experts.",
+        icon: UserRemove, title: "Expertise Walks Out", text: "Critical knowledge leaves with retiring employees and departing experts.",
         visual: (
             <div className="mt-4 flex items-center gap-2">
                 <div className="flex -space-x-1.5">
@@ -24,7 +24,7 @@ const painPoints = [
         ),
     },
     {
-        icon: FileText, title: "Data Sits Unused", text: "PDFs, schemas, and emails contain answers no one can find when needed.",
+        icon: DocumentText, title: "Data Sits Unused", text: "PDFs, schemas, and emails contain answers no one can find when needed.",
         visual: (
             <div className="mt-4 space-y-1.5">
                 {["PDF", "DOC", "XLS"].map((type, i) => (
@@ -40,7 +40,7 @@ const painPoints = [
         ),
     },
     {
-        icon: RefreshCcw, title: "Mistakes Repeat", text: "Teams solve the same problems again because lessons aren't captured.",
+        icon: Refresh2, title: "Mistakes Repeat", text: "Teams solve the same problems again because lessons aren't captured.",
         visual: (
             <div className="mt-4 relative">
                 <svg className="w-full h-12" viewBox="0 0 160 40">
@@ -61,7 +61,7 @@ const painPoints = [
         ),
     },
     {
-        icon: Unplug, title: "AI Lacks Context", text: "Generic AI tools feel disconnected from your real business operations.",
+        icon: Link21, title: "AI Lacks Context", text: "Generic AI tools feel disconnected from your real business operations.",
         visual: (
             <div className="mt-4">
                 <div className="rounded-lg bg-[#0b0f14]/60 border border-[#1f2937]/40 p-2.5">
@@ -114,7 +114,7 @@ const ProblemStory = () => {
                             className="group glass-card-strong rounded-2xl p-7 card-hover"
                         >
                             <div className="size-12 rounded-2xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff] mb-5 group-hover:bg-[#38b6ff] group-hover:text-white transition-all duration-500">
-                                <point.icon size={22} />
+                                <point.icon size={22} variant="TwoTone" />
                             </div>
                             <h3 className="text-lg font-bold text-white mb-2 tracking-tight">{point.title}</h3>
                             <p className="text-sm text-[#9ca3af] font-medium leading-relaxed">{point.text}</p>
