@@ -14,7 +14,7 @@ const data = {
     company: {
         name: 'Conqrai',
         description:
-            'We transform documents, data, and human expertise into a single intelligent system \u2014 giving your teams clarity, continuity, and decision power.',
+            'We transform documents, data, and human expertise into a single intelligent system, giving your teams clarity, continuity, and decision power.',
     },
     links: {
         company: [

@@ -58,7 +58,7 @@ const WhoItsFor = () => {
                     transition={{ delay: 0.4, duration: 0.6 }}
                     className="mt-12 text-center text-lg text-[#9ca3af] font-medium"
                 >
-                    If your organization is complex — <span className="text-white font-semibold">this was built for you.</span>
+                    If your organization is complex, <span className="text-white font-semibold">this was built for you.</span>
                 </motion.p>
             </div>
         </section>

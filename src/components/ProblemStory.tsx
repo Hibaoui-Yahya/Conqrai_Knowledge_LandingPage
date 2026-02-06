@@ -58,7 +58,7 @@ const ProblemStory = () => {
                 >
                     <div className="glass-card rounded-2xl p-8 text-center glow-border">
                         <p className="text-lg md:text-xl text-[#9ca3af] font-medium italic">
-                            "Enterprises don't suffer from lack of data —
+                            "Enterprises don't suffer from lack of data.
                             <span className="text-white font-semibold not-italic"> they suffer from lack of memory.</span>"
                         </p>
                     </div>

@@ -2,7 +2,7 @@ import { Layers, Brain, Search, Shield, Globe, Lock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const capabilities = [
-    { icon: Layers, title: "Multimodal Knowledge Ingestion", desc: "Text, tables, schemas, images, diagrams, reports — all formats, one system.", color: "#38b6ff" },
+    { icon: Layers, title: "Multimodal Knowledge Ingestion", desc: "Text, tables, schemas, images, diagrams, reports. All formats, one system.", color: "#38b6ff" },
     { icon: Brain, title: "Expert Insight Layer", desc: "Capture human warnings, context, and field-proven decisions alongside data.", color: "#a78bfa" },
     { icon: Search, title: "Explainable AI Responses", desc: "Every answer comes with sources, reasoning chains, and full traceability.", color: "#34d399" },
     { icon: Shield, title: "Enterprise Governance", desc: "Roles, permissions, validation workflows, and a complete audit trail.", color: "#f59e0b" },

@@ -54,7 +54,7 @@ export function HeroSection() {
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                             className="mt-8 mx-auto max-w-2xl text-lg md:text-xl text-[#9ca3af] font-medium leading-relaxed"
                         >
-                            We transform documents, data, and human expertise into a single intelligent system that helps your teams decide faster — and smarter.
+                            We transform documents, data, and human expertise into a single intelligent system that helps your teams decide faster and smarter.
                         </motion.p>
 
                         <motion.div

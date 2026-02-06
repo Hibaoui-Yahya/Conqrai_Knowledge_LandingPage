@@ -42,7 +42,7 @@ const ProductVision = () => {
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-[1.1] mb-6">
                             AI that understands
                             <br />
-                            <span className="text-gradient">your business</span> — not just your words.
+                            <span className="text-gradient">your business</span>, not just your words.
                         </h2>
                         <p className="text-lg text-[#9ca3af] font-medium leading-relaxed mb-8">
                             Our platform doesn't replace experts. <span className="text-white font-semibold">It preserves them.</span> It connects human judgment with operational data and makes it accessible, explainable, and reusable across the organization.
