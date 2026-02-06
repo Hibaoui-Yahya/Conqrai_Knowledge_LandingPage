@@ -3,6 +3,7 @@ import { ArrowRight, Menu, X, Users, BarChart3, Shield, ChevronRight } from 'luc
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+import DashboardMockup from '@/components/visuals/DashboardMockup'
 
 const stats = [
     { icon: Users, value: "98%", label: "Client Satisfaction" },
@@ -20,6 +21,30 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-radial-glow" />
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#38b6ff] rounded-full opacity-[0.05] blur-[200px] pointer-events-none" />
                 <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#38b6ff] rounded-full opacity-[0.03] blur-[150px] pointer-events-none" />
+
+                {/* Floating particles */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {[...Array(6)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute size-1 rounded-full bg-[#38b6ff]"
+                            style={{
+                                left: `${15 + i * 15}%`,
+                                top: `${20 + (i % 3) * 25}%`,
+                            }}
+                            animate={{
+                                y: [-20, 20, -20],
+                                opacity: [0.1, 0.4, 0.1],
+                            }}
+                            transition={{
+                                duration: 4 + i * 0.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: i * 0.7,
+                            }}
+                        />
+                    ))}
+                </div>
 
                 <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20">
                     {/* Hero content */}
@@ -109,84 +134,8 @@ export function HeroSection() {
                         </div>
                     </motion.div>
 
-                    {/* Decorative dashboard mockup cards */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 60 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                        className="mt-16 relative max-w-5xl mx-auto"
-                    >
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {/* Card 1 */}
-                            <div className="glass-card-strong rounded-2xl p-6 card-hover">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="size-8 rounded-lg bg-[#38b6ff]/15 flex items-center justify-center">
-                                        <div className="size-3 rounded-full bg-[#38b6ff]" />
-                                    </div>
-                                    <span className="text-sm font-semibold text-white">Knowledge Capture</span>
-                                </div>
-                                <div className="space-y-2.5">
-                                    <div className="h-2 rounded-full bg-[#1f2937] overflow-hidden">
-                                        <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-[#38b6ff] to-[#38b6ff]/60" />
-                                    </div>
-                                    <div className="h-2 rounded-full bg-[#1f2937] overflow-hidden">
-                                        <div className="h-full w-[65%] rounded-full bg-gradient-to-r from-[#38b6ff]/80 to-[#38b6ff]/40" />
-                                    </div>
-                                    <div className="h-2 rounded-full bg-[#1f2937] overflow-hidden">
-                                        <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-[#38b6ff] to-[#38b6ff]/60" />
-                                    </div>
-                                </div>
-                                <div className="mt-4 flex justify-between text-xs text-[#9ca3af]">
-                                    <span>2,847 documents</span>
-                                    <span className="text-[#38b6ff] font-semibold">Active</span>
-                                </div>
-                            </div>
-
-                            {/* Card 2 */}
-                            <div className="glass-card-strong rounded-2xl p-6 card-hover">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="size-8 rounded-lg bg-emerald-500/15 flex items-center justify-center">
-                                        <div className="size-3 rounded-full bg-emerald-400" />
-                                    </div>
-                                    <span className="text-sm font-semibold text-white">AI Responses</span>
-                                </div>
-                                <div className="text-center py-3">
-                                    <div className="text-4xl font-black text-white mb-1">98.6%</div>
-                                    <div className="text-xs text-emerald-400 font-semibold">Accuracy Rate</div>
-                                </div>
-                                <div className="flex justify-between items-center pt-2 border-t border-[#1f2937]">
-                                    <span className="text-xs text-[#9ca3af]">Last 30 days</span>
-                                    <span className="text-xs text-emerald-400 font-medium">+2.3%</span>
-                                </div>
-                            </div>
-
-                            {/* Card 3 */}
-                            <div className="glass-card-strong rounded-2xl p-6 card-hover">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="size-8 rounded-lg bg-violet-500/15 flex items-center justify-center">
-                                        <div className="size-3 rounded-full bg-violet-400" />
-                                    </div>
-                                    <span className="text-sm font-semibold text-white">Expert Validations</span>
-                                </div>
-                                <div className="space-y-3">
-                                    {["Engineering Lead", "Safety Officer", "Operations Mgr"].map((name, i) => (
-                                        <div key={i} className="flex items-center gap-3">
-                                            <div className="size-7 rounded-full bg-gradient-to-br from-[#38b6ff]/30 to-violet-500/30 flex items-center justify-center text-[10px] font-bold text-white">
-                                                {name.charAt(0)}
-                                            </div>
-                                            <span className="text-xs text-[#9ca3af] flex-1">{name}</span>
-                                            <div className="size-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                                                <div className="size-1.5 rounded-full bg-emerald-400" />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Gradient fade at bottom */}
-                        <div className="absolute -bottom-8 inset-x-0 h-16 bg-gradient-to-t from-[#0b0f14] to-transparent pointer-events-none" />
-                    </motion.div>
+                    {/* Full dashboard mockup */}
+                    <DashboardMockup className="mt-16 max-w-5xl mx-auto" />
                 </div>
             </section>
         </>

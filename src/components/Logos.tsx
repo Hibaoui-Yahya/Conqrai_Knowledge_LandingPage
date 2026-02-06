@@ -2,11 +2,26 @@ import { motion } from 'framer-motion';
 import { Factory, Plane, Bolt, FlaskConical, Building2 } from 'lucide-react';
 
 const industries = [
-    { icon: Factory, name: "Engineering & Manufacturing", desc: "Unify SOPs, maintenance procedures, and field knowledge." },
-    { icon: Plane, name: "Aerospace & Automotive", desc: "Ensure compliance with traceable, validated answers." },
-    { icon: Bolt, name: "Energy & Infrastructure", desc: "Preserve decades of operational expertise digitally." },
-    { icon: FlaskConical, name: "R&D and Operations", desc: "Accelerate innovation with connected research data." },
-    { icon: Building2, name: "Digital Transformation", desc: "Bridge the gap between legacy systems and modern AI." },
+    {
+        icon: Factory, name: "Engineering & Manufacturing", desc: "Unify SOPs, maintenance procedures, and field knowledge.",
+        stats: { value: "340+", label: "SOPs unified" }, color: "#38b6ff",
+    },
+    {
+        icon: Plane, name: "Aerospace & Automotive", desc: "Ensure compliance with traceable, validated answers.",
+        stats: { value: "99.2%", label: "Compliance rate" }, color: "#a78bfa",
+    },
+    {
+        icon: Bolt, name: "Energy & Infrastructure", desc: "Preserve decades of operational expertise digitally.",
+        stats: { value: "25yr+", label: "Knowledge preserved" }, color: "#34d399",
+    },
+    {
+        icon: FlaskConical, name: "R&D and Operations", desc: "Accelerate innovation with connected research data.",
+        stats: { value: "4x", label: "Faster research" }, color: "#f59e0b",
+    },
+    {
+        icon: Building2, name: "Digital Transformation", desc: "Bridge the gap between legacy systems and modern AI.",
+        stats: { value: "60%", label: "Cost reduction" }, color: "#ec4899",
+    },
 ];
 
 const WhoItsFor = () => {
@@ -31,7 +46,7 @@ const WhoItsFor = () => {
                     </h2>
                 </motion.div>
 
-                {/* Bento layout - 2 large + 3 small */}
+                {/* Bento layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {industries.map((ind, idx) => (
                         <motion.div
@@ -42,11 +57,33 @@ const WhoItsFor = () => {
                             transition={{ delay: idx * 0.08, duration: 0.5 }}
                             className={`group glass-card-strong rounded-2xl p-7 card-hover ${idx < 2 ? 'lg:col-span-1' : ''}`}
                         >
-                            <div className="size-12 rounded-2xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff] mb-5 group-hover:bg-[#38b6ff] group-hover:text-white transition-all duration-500">
-                                <ind.icon size={24} />
+                            <div className="flex items-start justify-between mb-5">
+                                <div
+                                    className="size-12 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
+                                    style={{ backgroundColor: `${ind.color}12`, color: ind.color }}
+                                >
+                                    <ind.icon size={24} />
+                                </div>
+                                {/* Mini stat badge */}
+                                <div className="text-right">
+                                    <div className="text-lg font-black text-white leading-none">{ind.stats.value}</div>
+                                    <div className="text-[9px] font-medium mt-0.5" style={{ color: ind.color }}>{ind.stats.label}</div>
+                                </div>
                             </div>
                             <h3 className="text-lg font-bold text-white mb-2 tracking-tight">{ind.name}</h3>
                             <p className="text-sm text-[#9ca3af] font-medium leading-relaxed">{ind.desc}</p>
+
+                            {/* Bottom bar visual */}
+                            <div className="mt-4 h-1 rounded-full bg-[#1f2937] overflow-hidden">
+                                <motion.div
+                                    className="h-full rounded-full"
+                                    style={{ background: `linear-gradient(90deg, ${ind.color}, ${ind.color}40)` }}
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: "100%" }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3 + idx * 0.1, duration: 0.8 }}
+                                />
+                            </div>
                         </motion.div>
                     ))}
                 </div>

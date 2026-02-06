@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import AbstractBrain from '@/components/visuals/AbstractBrain';
 
 const FinalCTA = () => {
     return (
@@ -18,6 +19,11 @@ const FinalCTA = () => {
                 >
                     {/* Inner glow */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-[#38b6ff] rounded-full opacity-[0.08] blur-[100px] pointer-events-none" />
+
+                    {/* Abstract brain background */}
+                    <div className="absolute inset-0 opacity-[0.12] pointer-events-none">
+                        <AbstractBrain className="w-full h-full" />
+                    </div>
 
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-[1.1] mb-6">

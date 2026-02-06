@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import NetworkGraph from '@/components/visuals/NetworkGraph';
 
 const features = [
     "AI-Powered Knowledge Graph",
@@ -66,35 +67,34 @@ const ProductVision = () => {
                         </a>
                     </motion.div>
 
-                    {/* Right: Visual card */}
+                    {/* Right: Knowledge Graph + Dashboard */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <div className="glass-card-strong rounded-3xl p-8 glow-border">
-                            {/* Mini dashboard */}
-                            <div className="flex items-center justify-between mb-6">
+                        <div className="glass-card-strong rounded-3xl p-8 glow-border relative overflow-hidden">
+                            {/* Knowledge graph visualization */}
+                            <NetworkGraph className="h-56 mb-4" />
+
+                            {/* Mini dashboard overlay */}
+                            <div className="flex items-center justify-between mb-4">
                                 <div className="flex items-center gap-2">
                                     <div className="size-3 rounded-full bg-emerald-400" />
-                                    <span className="text-xs font-semibold text-[#9ca3af]">Platform Status</span>
+                                    <span className="text-xs font-semibold text-[#9ca3af]">Knowledge Graph</span>
                                 </div>
                                 <span className="text-xs font-bold text-emerald-400">Live</span>
                             </div>
 
-                            {/* Big stat */}
-                            <div className="text-center py-6 mb-6 rounded-2xl bg-[#0b0f14]/60">
-                                <div className="text-5xl font-black text-white mb-1 stat-glow">98.6%</div>
-                                <div className="text-sm text-[#38b6ff] font-semibold">Response Accuracy</div>
-                            </div>
-
                             {/* Trust bar */}
-                            <div className="glass-card rounded-xl p-4 mb-6">
+                            <div className="glass-card rounded-xl p-4 mb-4">
                                 <div className="flex items-center gap-3">
                                     <div className="flex -space-x-2">
-                                        {["E", "S", "O"].map((letter, i) => (
-                                            <div key={i} className="size-8 rounded-full bg-gradient-to-br from-[#38b6ff]/40 to-violet-500/40 border-2 border-[#111827] flex items-center justify-center text-[10px] font-bold text-white">
+                                        {["E", "S", "O", "M", "A"].map((letter, i) => (
+                                            <div key={i} className="size-7 rounded-full border-2 border-[#111827] flex items-center justify-center text-[9px] font-bold text-white"
+                                                style={{ backgroundColor: ["#38b6ff30", "#a78bfa30", "#34d39930", "#f59e0b30", "#ec489930"][i] }}
+                                            >
                                                 {letter}
                                             </div>
                                         ))}
@@ -107,7 +107,7 @@ const ProductVision = () => {
                             </div>
 
                             {/* Stats row */}
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid grid-cols-3 gap-3">
                                 {stats.map((stat, idx) => (
                                     <div key={idx} className="text-center py-3 rounded-xl bg-[#0b0f14]/40">
                                         <div className="text-xl font-black text-white">{stat.value}</div>
