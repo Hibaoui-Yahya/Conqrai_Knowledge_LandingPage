@@ -1,67 +1,81 @@
-import { X, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { X, Check } from 'lucide-react';
+
+const rows = [
+    { feature: "Answers", typical: "Generic, context-free outputs", ours: "Context-aware intelligence backed by sources" },
+    { feature: "Memory", typical: "Stateless chats, no retention", ours: "Persistent organizational knowledge graph" },
+    { feature: "Governance", typical: "No governance or audit", ours: "Enterprise RBAC, validation & full audit trail" },
+    { feature: "Approach", typical: "AI replaces humans", ours: "AI amplifies human expertise" },
+    { feature: "Traceability", typical: "Black box outputs", ours: "Full source attribution & reasoning chains" },
+    { feature: "Deployment", typical: "Cloud-only, shared infra", ours: "On-premise, private cloud, or air-gapped" },
+    { feature: "Data Privacy", typical: "Data used for model training", ours: "Zero data leakage. Your data stays yours." },
+    { feature: "Integration", typical: "Limited API access", ours: "MCP Protocol. Connect to any platform." },
+    { feature: "Encryption", typical: "Basic TLS", ours: "AES-256 + TLS 1.3 + customer-managed keys" },
+];
 
 const Comparison = () => {
     return (
-        <section className="py-24 bg-slate-50">
-            <div className="max-w-7xl mx-auto px-6">
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-20 leading-tight tracking-tight">
-                    Engineered for operations. <br />
-                    <span className="text-primary">Beyond search and generic AI.</span>
-                </h2>
+        <section className="relative py-24 md:py-32 bg-[#0b0f14] overflow-hidden">
+            <div className="absolute inset-0 bg-radial-glow-bottom" />
 
-                <div className="overflow-x-auto rounded-[32px] border border-slate-200 bg-white shadow-lg">
-                    <table className="w-full text-left border-collapse min-w-[800px]">
-                        <thead>
-                            <tr className="bg-slate-50/50">
-                                <th className="py-8 px-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] border-b border-slate-100">Key Feature</th>
-                                <th className="py-8 px-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] border-b border-slate-100">Traditional Docs</th>
-                                <th className="py-8 px-10 text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] border-b border-slate-100">Generic LLMs</th>
-                                <th className="py-8 px-10 text-[11px] font-bold text-primary uppercase tracking-[0.2em] bg-primary/5 border-b border-primary/10">Conqrai</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-100">
-                            <tr>
-                                <td className="py-8 px-10 font-semibold text-slate-900 leading-tight">Knowledge Base</td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">Static PDFs / Wikis</td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">Unverified Web Data</td>
-                                <td className="py-8 px-10 font-semibold text-slate-900 bg-primary/5">Grounded Internal IP</td>
-                            </tr>
-                            <tr>
-                                <td className="py-8 px-10 font-semibold text-slate-900 leading-tight">Accuracy Guarantee</td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">
-                                    <div className="flex items-center gap-2">
-                                        <X className="text-red-400 flex-shrink-0" size={18} />
-                                        <span>Reliant on Human Memory</span>
-                                    </div>
-                                </td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">
-                                    <div className="flex items-center gap-2">
-                                        <AlertTriangle className="text-amber-400 flex-shrink-0" size={18} />
-                                        <span>High Hallucination Risk</span>
-                                    </div>
-                                </td>
-                                <td className="py-8 px-10 font-semibold text-slate-900 bg-primary/5">
-                                    <div className="flex items-center gap-2 text-primary">
-                                        <CheckCircle2 className="text-emerald-500 flex-shrink-0" size={18} />
-                                        <span>100% Traceable Answers</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="py-8 px-10 font-semibold text-slate-900 leading-tight">Expert Validation</td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">Isolated / Informal</td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">None / Random</td>
-                                <td className="py-8 px-10 font-semibold text-slate-900 bg-primary/5">Expert-in-the-Loop Workflow</td>
-                            </tr>
-                            <tr>
-                                <td className="py-8 px-10 font-semibold text-slate-900 leading-tight">Field Readiness</td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">Fragmented & Slow</td>
-                                <td className="py-8 px-10 text-slate-500 font-medium">Surface Level Only</td>
-                                <td className="py-8 px-10 font-semibold text-slate-900 bg-primary/5 italic">Actionable Execution Guides</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div className="relative z-10 max-w-5xl mx-auto px-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <span className="section-badge">Comparison</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[1.05]">
+                        Why not just
+                        <br />
+                        <span className="text-gradient">another AI tool?</span>
+                    </h2>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                    className="glass-card-strong rounded-3xl overflow-hidden glow-border"
+                >
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left border-collapse min-w-[650px]">
+                            <thead>
+                                <tr className="border-b border-[#1f2937]">
+                                    <th className="py-6 px-8 text-[11px] font-bold text-[#9ca3af] uppercase tracking-[0.2em] w-[20%]" />
+                                    <th className="py-6 px-8 text-[11px] font-bold text-[#9ca3af] uppercase tracking-[0.2em]">
+                                        <div className="flex items-center gap-2">
+                                            <div className="size-5 rounded-md bg-[#1f2937] flex items-center justify-center">
+                                                <X className="size-3 text-[#9ca3af]" />
+                                            </div>
+                                            Typical AI Tools
+                                        </div>
+                                    </th>
+                                    <th className="py-6 px-8 text-[11px] font-bold text-[#38b6ff] uppercase tracking-[0.2em] bg-[#38b6ff]/[0.03]">
+                                        <div className="flex items-center gap-2">
+                                            <div className="size-5 rounded-md bg-[#38b6ff]/15 flex items-center justify-center">
+                                                <Check className="size-3 text-[#38b6ff]" />
+                                            </div>
+                                            Conqrai Platform
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {rows.map((row, idx) => (
+                                    <tr key={idx} className={idx < rows.length - 1 ? 'border-b border-[#1f2937]/50' : ''}>
+                                        <td className="py-5 px-8 text-xs font-bold text-white uppercase tracking-wider">{row.feature}</td>
+                                        <td className="py-5 px-8 text-[14px] text-[#6b7280] font-medium">{row.typical}</td>
+                                        <td className="py-5 px-8 text-[14px] text-white font-semibold bg-[#38b6ff]/[0.03]">{row.ours}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

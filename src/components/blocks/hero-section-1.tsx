@@ -1,159 +1,170 @@
 import React from 'react'
-import { ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowRight, Menu, X, Users, BarChart3, Shield, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { AnimatedGroup } from '@/components/ui/animated-group'
 import { cn } from '@/lib/utils'
-import { type Variants, motion } from 'framer-motion'
-import TerminalMockup from '../TerminalMockup'
+import { motion } from 'framer-motion'
+import DashboardMockup from '@/components/visuals/DashboardMockup'
 import { Typewriter } from '@/components/ui/typewriter'
 
+const stats = [
+    { icon: Users, value: "98%", label: "Client Satisfaction" },
+    { icon: BarChart3, value: "4x", label: "Faster Decisions" },
+    { icon: Shield, value: "100%", label: "Traceable Answers" },
+]
 
 export function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main className="overflow-hidden">
-                <div
-                    aria-hidden
-                    className="z-[2] absolute inset-0 pointer-events-none isolate opacity-50 contain-strict hidden lg:block">
-                    <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
-                    <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
-                    <div className="h-[80rem] -translate-y-[350px] absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
+            <section className="relative min-h-screen overflow-hidden bg-[#0b0f14]">
+                {/* Background layers */}
+                <div className="absolute inset-0 bg-grid" />
+                <div className="absolute inset-0 bg-radial-glow" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#38b6ff] rounded-full opacity-[0.05] blur-[200px] pointer-events-none" />
+                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#38b6ff] rounded-full opacity-[0.03] blur-[150px] pointer-events-none" />
+
+                {/* Floating particles */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {[...Array(6)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute size-1 rounded-full bg-[#38b6ff]"
+                            style={{
+                                left: `${15 + i * 15}%`,
+                                top: `${20 + (i % 3) * 25}%`,
+                            }}
+                            animate={{
+                                y: [-20, 20, -20],
+                                opacity: [0.1, 0.4, 0.1],
+                            }}
+                            transition={{
+                                duration: 4 + i * 0.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: i * 0.7,
+                            }}
+                        />
+                    ))}
                 </div>
-                <section>
-                    <div className="relative pt-24 md:pt-36">
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            type: 'spring' as const,
-                                            bounce: 0.3,
-                                            duration: 2,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            type: 'spring' as const,
-                                            bounce: 0.3,
-                                            duration: 2,
-                                        },
-                                    },
-                                },
-                            } as const satisfies { container: Variants; item: Variants }}
-                            className="absolute inset-0 -z-20">
-                            <img
-                                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072"
-                                alt="background"
-                                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-                                width="3276"
-                                height="4095"
-                            />
-                        </AnimatedGroup>
-                        <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
-                        <div className="mx-auto max-w-7xl px-6">
-                            <div className="text-center pt-8 md:pt-16">
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="flex justify-center"
-                                >
-                                    <a
-                                        href="#how-it-works"
-                                        className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 transition-colors hover:border-primary/50 hover:bg-slate-50">
-                                        <span className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 group-hover:text-primary transition-colors">Industrial AI Platform</span>
-                                        <ArrowRight className="size-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
-                                    </a>
-                                </motion.div>
 
-                                <motion.h1
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.1 }}
-                                    className="mt-8 max-w-4xl mx-auto text-balance text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-900 leading-[1.1] lg:leading-[1.1]">
-                                    Unify Your Industrial Knowledge. <br />
-                                    <span className="text-slate-500">And turn it into </span>
-                                    <Typewriter
-                                        text={[
-                                            "Precise Actions.",
-                                            "Validated SOPs.",
-                                            "Expert Guidance.",
-                                            "Clear Results.",
-                                            "Your Advantage.",
-                                        ]}
-                                        speed={70}
-                                        className="text-primary italic"
-                                        waitTime={2000}
-                                        deleteSpeed={40}
-                                        cursorChar={"_"}
-                                    />
-                                </motion.h1>
+                <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20">
+                    {/* Hero content */}
+                    <div className="text-center max-w-5xl mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <span className="section-badge">
+                                <span className="size-1.5 rounded-full bg-[#38b6ff] animate-pulse" />
+                                Enterprise AI Platform
+                            </span>
+                        </motion.div>
 
-                                <motion.p
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.2 }}
-                                    className="mx-auto mt-6 max-w-xl text-base md:text-lg text-slate-500 font-medium leading-relaxed">
-                                    Conqrai turns technical documentation into validated, step-by-step answers for mission-critical industrial teams.
-                                </motion.p>
+                        <motion.h1
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white leading-[1.05]"
+                        >
+                            Your teams make critical decisions
+                            <br />
+                            without{" "}
+                            <span className="text-gradient">
+                                <Typewriter
+                                    text={[
+                                        "full context.",
+                                        "past lessons.",
+                                        "expert insights.",
+                                        "connected data.",
+                                        "the complete picture.",
+                                    ]}
+                                    speed={70}
+                                    deleteSpeed={35}
+                                    waitTime={2200}
+                                    loop={true}
+                                    className="text-gradient"
+                                    cursorChar="|"
+                                    cursorClassName="ml-1 text-[#38b6ff]"
+                                />
+                            </span>
+                            <br />
+                            <span className="text-[#9ca3af]">Not anymore.</span>
+                        </motion.h1>
 
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.3 }}
-                                    className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4"
-                                >
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        className="h-14 rounded-xl px-10 text-lg font-bold bg-slate-900 hover:bg-primary transition-all shadow-xl shadow-slate-900/10">
-                                        <a href="#demo">
-                                            <span>Request Access</span>
-                                        </a>
-                                    </Button>
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        variant="outline"
-                                        className="h-14 rounded-xl px-10 text-lg font-bold border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors">
-                                        <a href="#how-it-works">
-                                            <span>View Use Cases</span>
-                                        </a>
-                                    </Button>
-                                </motion.div>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-8 mx-auto max-w-2xl text-lg md:text-xl text-[#9ca3af] font-medium leading-relaxed"
+                        >
+                            Conqrai Knowledge unifies your documents, data, and institutional memory into one AI-powered system where every answer is instant, accurate, and fully traceable.
+                        </motion.p>
 
-                                <motion.div
-                                    initial={{ opacity: 0, y: 40 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 1, delay: 0.5 }}
-                                    className="relative mt-20 px-2 pb-24"
-                                >
-                                    <div className="relative mx-auto max-w-2xl">
-                                        <TerminalMockup />
-                                    </div>
-                                </motion.div>
-                            </div>
-                        </div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+                        >
+                            <Button
+                                asChild
+                                size="lg"
+                                className="h-13 rounded-xl px-8 text-base font-bold bg-[#38b6ff] hover:bg-[#2a9edf] text-white transition-all shadow-lg shadow-[#38b6ff]/25 hover:shadow-[#38b6ff]/40 hover:-translate-y-0.5"
+                            >
+                                <a href="mailto:hello@conqrai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                                    Request a demo
+                                    <ChevronRight className="size-4" />
+                                </a>
+                            </Button>
+                            <Button
+                                asChild
+                                size="lg"
+                                variant="outline"
+                                className="h-13 rounded-xl px-8 text-base font-bold border-[#1f2937] text-[#9ca3af] hover:text-white hover:border-[#38b6ff]/30 bg-transparent transition-all hover:bg-[#111827]/50"
+                            >
+                                <a href="#how-it-works" className="flex items-center gap-2">
+                                    See how it works
+                                    <ArrowRight className="size-4" />
+                                </a>
+                            </Button>
+                        </motion.div>
                     </div>
-                </section>
-            </main>
+
+                    {/* Stats bar */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="mt-20 max-w-3xl mx-auto"
+                    >
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0 sm:divide-x sm:divide-[#1f2937]">
+                            {stats.map((stat, idx) => (
+                                <div key={idx} className="flex items-center gap-3 px-8 py-3">
+                                    <div className="size-10 rounded-xl bg-[#38b6ff]/10 flex items-center justify-center text-[#38b6ff]">
+                                        <stat.icon size={18} />
+                                    </div>
+                                    <div>
+                                        <div className="text-2xl font-black text-white tracking-tight stat-glow">{stat.value}</div>
+                                        <div className="text-xs font-medium text-[#9ca3af]">{stat.label}</div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    {/* Full dashboard mockup */}
+                    <DashboardMockup className="mt-16 max-w-5xl mx-auto" />
+                </div>
+            </section>
         </>
     )
 }
 
 const menuItems = [
     { name: 'How it Works', href: '#how-it-works' },
-    { name: 'Resilience', href: '#failure-story' },
-    { name: 'Impact', href: '#impact' },
+    { name: 'Capabilities', href: '#capabilities' },
+    { name: 'Industries', href: '#industries' },
     { name: 'Contact', href: '#contact' },
 ]
 
@@ -168,31 +179,31 @@ const HeroHeader = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
     return (
         <header>
             <nav
                 data-state={menuState && 'active'}
                 className="fixed z-50 w-full px-2 group">
-                <div className={cn('mx-auto mt-4 max-w-6xl px-6 transition-all duration-300 lg:px-12 rounded-2xl border border-transparent', isScrolled && 'bg-white/80 max-w-5xl backdrop-blur-lg lg:px-8 border-slate-200 shadow-sm')}>
+                <div className={cn(
+                    'mx-auto mt-4 max-w-6xl px-6 transition-all duration-300 lg:px-12 rounded-2xl border border-transparent',
+                    isScrolled && 'glass-card-strong max-w-5xl lg:px-8 shadow-2xl shadow-black/30'
+                )}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
-                            <a
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center">
+                            <a href="/" aria-label="home" className="flex items-center">
                                 <img
-                                    src="/logo-light-removebg-preview.png"
+                                    src="/dark_mode_logo-removebg-preview.png"
                                     alt="Conqrai Logo"
                                     className={cn("h-8 w-auto transition-all duration-300", isScrolled && "h-6")}
                                 />
                             </a>
-
                             <button
                                 onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+                                aria-label={menuState ? 'Close Menu' : 'Open Menu'}
                                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                                <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 text-[#e5e7eb] duration-200" />
+                                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 text-[#e5e7eb] -rotate-180 scale-0 opacity-0 duration-200" />
                             </button>
                         </div>
 
@@ -202,7 +213,7 @@ const HeroHeader = () => {
                                     <li key={index}>
                                         <a
                                             href={item.href}
-                                            className="text-[12px] font-bold uppercase tracking-[0.1em] text-slate-500 hover:text-primary transition-colors">
+                                            className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#9ca3af] hover:text-[#38b6ff] transition-colors">
                                             <span>{item.name}</span>
                                         </a>
                                     </li>
@@ -210,52 +221,35 @@ const HeroHeader = () => {
                             </ul>
                         </div>
 
-                        <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+                        <div className="bg-[#111827] group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-[#1f2937] p-6 shadow-2xl shadow-black/30 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
                             <div className="lg:hidden">
                                 <ul className="space-y-6 text-base font-semibold">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
-                                            <a
-                                                href={item.href}
-                                                className="text-slate-600 hover:text-primary block duration-150">
+                                            <a href={item.href} className="text-[#9ca3af] hover:text-[#38b6ff] block duration-150">
                                                 <span>{item.name}</span>
                                             </a>
                                         </li>
                                     ))}
                                     <li>
-                                        <a
-                                            href="https://app.conqrknowledge.com"
-                                            className="text-slate-600 hover:text-primary block duration-150">
+                                        <a href="https://app.conqrknowledge.com" target="_blank" rel="noopener noreferrer" className="text-[#9ca3af] hover:text-[#38b6ff] block duration-150">
                                             <span>Login</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit ml-4">
-                                <Button
-                                    asChild
-                                    variant="ghost"
-                                    size="sm"
-                                    className="text-[12px] font-bold uppercase tracking-[0.1em] text-slate-500 hover:text-primary transition-colors">
-                                    <a href="https://app.conqrknowledge.com">
-                                        <span>Login</span>
-                                    </a>
+                                <Button asChild variant="ghost" size="sm" className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#9ca3af] hover:text-[#38b6ff] transition-colors">
+                                    <a href="https://app.conqrknowledge.com" target="_blank" rel="noopener noreferrer"><span>Login</span></a>
                                 </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn("bg-slate-900 hover:bg-primary text-white font-bold rounded-lg px-6 h-9")}>
-                                    <a href="#contact">
-                                        <span>Get Started</span>
-                                    </a>
+                                <Button asChild size="sm" className="bg-[#38b6ff] hover:bg-[#2a9edf] text-white font-bold rounded-xl px-6 h-9 shadow-lg shadow-[#38b6ff]/20">
+                                    <a href="mailto:hello@conqrai.com" target="_blank" rel="noopener noreferrer"><span>Request a demo</span></a>
                                 </Button>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
-        </header >
+        </header>
     )
 }
-
-

@@ -1,56 +1,128 @@
 import { motion } from 'framer-motion';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import NetworkGraph from '@/components/visuals/NetworkGraph';
 
-const FailureStory = () => {
+const features = [
+    "AI-Powered Knowledge Graph",
+    "Real-Time Expert Validation",
+    "Source-Backed Answers",
+    "Seamless Team Integration",
+];
+
+const stats = [
+    { value: "2.8K+", label: "Documents Indexed" },
+    { value: "50+", label: "Enterprise Teams" },
+    { value: "160K+", label: "Queries Resolved" },
+];
+
+const ProductVision = () => {
     return (
-        <section id="failure-story" className="py-24 bg-slate-50 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:24px_24px]" />
+        <section className="relative py-24 md:py-32 bg-[#0b0f14] overflow-hidden">
+            <div className="absolute inset-0 bg-dots" />
+            <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#38b6ff] rounded-full opacity-[0.04] blur-[160px] pointer-events-none" />
 
-            <div className="max-w-4xl mx-auto px-6 relative">
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-[40px] p-12 md:p-16 border border-slate-200 shadow-xl text-center"
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-6"
                 >
-                    <div className="inline-block px-3 py-1 rounded-full bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-8 border border-slate-100">Risk & Resilience</div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12 leading-[1.1] tracking-tight">
-                        “The Knowledge Already Existed.”
-                    </h2>
+                    <span className="section-badge">About Us</span>
+                </motion.div>
 
-                    <div className="space-y-8 text-left text-lg md:text-xl text-slate-600 leading-relaxed font-medium">
-                        <p className="text-center font-semibold text-slate-400">In every major failure investigation, there is a sentence that appears again and again:</p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    {/* Left: Copy */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-[1.1] mb-6">
+                            AI that understands
+                            <br />
+                            <span className="text-gradient">your business</span>, not just your words.
+                        </h2>
+                        <p className="text-lg text-[#9ca3af] font-medium leading-relaxed mb-8">
+                            Our platform doesn't replace experts. <span className="text-white font-semibold">It preserves them.</span> It connects human judgment with operational data and makes it accessible, explainable, and reusable across the organization.
+                        </p>
 
-                        <motion.div
-                            whileInView={{ x: [0, 5, 0] }}
-                            className="bg-slate-50 border-l-4 border-primary rounded-r-xl p-8 my-10"
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                            {features.map((feature, idx) => (
+                                <div key={idx} className="flex items-center gap-3">
+                                    <CheckCircle2 className="size-5 text-[#38b6ff] flex-shrink-0" />
+                                    <span className="text-sm font-semibold text-[#e5e7eb]">{feature}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <a
+                            href="mailto:hello@conqrai.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111827] border border-[#1f2937] text-sm font-bold text-white hover:border-[#38b6ff]/30 transition-all group"
                         >
-                            <blockquote className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
-                                “The information was available — but not at the moment it was needed.”
-                            </blockquote>
-                        </motion.div>
+                            Request a demo
+                            <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+                    </motion.div>
 
-                        <p>
-                            The manuals were written. The procedures were approved. The experts knew what to do. And yet… the failure still happened.
-                        </p>
-                        <p>
-                            Not because people were incompetent. Not because the knowledge was missing. But because under pressure, <span className="text-slate-900 font-bold decoration-primary/30 decoration-4 underline underline-offset-4">knowledge became unreachable.</span>
-                        </p>
+                    {/* Right: Knowledge Graph + Dashboard */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <div className="glass-card-strong rounded-3xl p-8 glow-border relative overflow-hidden">
+                            {/* Knowledge graph visualization */}
+                            <NetworkGraph className="h-56 mb-4" />
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-10">
-                            <div>
-                                <h4 className="text-primary font-bold uppercase tracking-widest text-sm mb-4">The Invisible Gap</h4>
-                                <p className="text-base">Most disasters are caused by a gap between knowledge and execution. When documents are buried and experts are away, hesitation takes over.</p>
+                            {/* Mini dashboard overlay */}
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center gap-2">
+                                    <div className="size-3 rounded-full bg-emerald-400" />
+                                    <span className="text-xs font-semibold text-[#9ca3af]">Knowledge Graph</span>
+                                </div>
+                                <span className="text-xs font-bold text-emerald-400">Live</span>
                             </div>
-                            <div>
-                                <h4 className="text-primary font-bold uppercase tracking-widest text-sm mb-4">The Modern Reality</h4>
-                                <p className="text-base">Equipment is more complex, teams are distributed. Relying on "hope" is not a system. Conqrai exists to make action inevitable.</p>
+
+                            {/* Trust bar */}
+                            <div className="glass-card rounded-xl p-4 mb-4">
+                                <div className="flex items-center gap-3">
+                                    <div className="flex -space-x-2">
+                                        {["E", "S", "O", "M", "A"].map((letter, i) => (
+                                            <div key={i} className="size-7 rounded-full border-2 border-[#111827] flex items-center justify-center text-[9px] font-bold text-white"
+                                                style={{ backgroundColor: ["#38b6ff30", "#a78bfa30", "#34d39930", "#f59e0b30", "#ec489930"][i] }}
+                                            >
+                                                {letter}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div>
+                                        <div className="text-xs font-semibold text-white">Trusted by Enterprise Teams</div>
+                                        <div className="text-[10px] text-[#9ca3af]">Expert-validated knowledge base</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Stats row */}
+                            <div className="grid grid-cols-3 gap-3">
+                                {stats.map((stat, idx) => (
+                                    <div key={idx} className="text-center py-3 rounded-xl bg-[#0b0f14]/40">
+                                        <div className="text-xl font-black text-white">{stat.value}</div>
+                                        <div className="text-[10px] text-[#9ca3af] font-medium mt-0.5">{stat.label}</div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
 };
 
-export default FailureStory;
+export default ProductVision;
