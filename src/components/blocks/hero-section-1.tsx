@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import DashboardMockup from '@/components/visuals/DashboardMockup'
+import { Typewriter } from '@/components/ui/typewriter'
 
 const stats = [
     { icon: Users, value: "98%", label: "Client Satisfaction" },
@@ -68,7 +69,19 @@ export function HeroSection() {
                         >
                             Your organization already
                             <br />
-                            has the <span className="text-gradient">answers</span>.
+                            has the{" "}
+                            <span className="text-gradient">
+                                <Typewriter
+                                    text={["answers", "knowledge", "expertise", "solutions", "intelligence"]}
+                                    speed={80}
+                                    deleteSpeed={40}
+                                    waitTime={2500}
+                                    loop={true}
+                                    className="text-gradient"
+                                    cursorChar="|"
+                                    cursorClassName="ml-1 text-[#38b6ff]"
+                                />
+                            </span>
                             <br />
                             <span className="text-[#9ca3af]">They're just scattered.</span>
                         </motion.h1>
