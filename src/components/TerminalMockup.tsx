@@ -50,7 +50,7 @@ const TerminalMockup = () => {
                     <div className="w-10" /> {/* Spacer */}
                 </div>
 
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                     {/* Input Field */}
                     <div className="mb-6">
                         <div className="flex items-center gap-2 mb-2.5">

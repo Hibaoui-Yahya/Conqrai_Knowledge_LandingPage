@@ -34,9 +34,9 @@ const Impact = () => {
     ];
 
     return (
-        <section id="impact" className="py-24 bg-white">
+        <section id="impact" className="py-12 md:py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-20">
+                <div className="text-center mb-10 md:mb-20">
                     <div className="inline-block px-3 py-1 rounded-full bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border border-slate-100">Direct Outcomes</div>
                     <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
                         Measured impact for <br />
@@ -55,7 +55,7 @@ const Impact = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-300"
+                            className="p-6 md:p-8 rounded-3xl border border-slate-100 bg-white shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-300"
                         >
                             <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-primary mb-6 border border-slate-100">
                                 <stat.icon size={20} />
@@ -76,12 +76,12 @@ const Impact = () => {
                     ))}
                 </div>
 
-                <div className="mt-20 p-8 md:p-12 rounded-[32px] bg-slate-900 overflow-hidden relative group">
+                <div className="mt-10 md:mt-20 p-6 md:p-12 rounded-2xl md:rounded-[32px] bg-slate-900 overflow-hidden relative group">
                     {/* Decorative Background Elements */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
-                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
                         <div className="max-w-xl">
                             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">
                                 Ready to validate your <br />operational knowledge?

@@ -54,15 +54,15 @@ const ContactForm = () => {
         }
     };
 
-    const inputClass = "w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-300";
+    const inputClass = "w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl bg-slate-50 border border-slate-100 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-300 text-sm sm:text-base";
     const labelClass = "text-xs font-bold text-slate-400 uppercase tracking-widest pl-1";
 
     return (
-        <section id="contact" className="py-24 bg-primary relative overflow-hidden">
+        <section id="contact" className="py-12 md:py-24 bg-primary relative overflow-hidden">
             {/* Decorative Blur */}
             <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/10 rounded-full blur-[80px]" />
 
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
                 <div>
                     <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight">
                         Ready to turn your knowledge into <span className="text-blue-200">operational power?</span>
@@ -91,7 +91,7 @@ const ContactForm = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-[32px] p-10 shadow-2xl border border-white/20"
+                    className="bg-white rounded-2xl sm:rounded-[32px] p-5 sm:p-8 md:p-10 shadow-2xl border border-white/20"
                 >
                     {status === 'success' ? (
                         <div className="text-center py-10">
@@ -105,7 +105,7 @@ const ContactForm = () => {
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                 <div className="space-y-2">
                                     <label className={labelClass}>Full Name</label>
                                     <input
@@ -132,7 +132,7 @@ const ContactForm = () => {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                 <div className="space-y-2">
                                     <label className={labelClass}>Organization</label>
                                     <input
@@ -203,7 +203,7 @@ const ContactForm = () => {
                             <button
                                 type="submit"
                                 disabled={status === 'loading'}
-                                className="w-full bg-slate-900 text-white py-5 rounded-xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary transition-all shadow-xl shadow-slate-900/10 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="w-full bg-slate-900 text-white py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center gap-3 hover:bg-primary transition-all shadow-xl shadow-slate-900/10 disabled:opacity-70 disabled:cursor-not-allowed"
                             >
                                 {status === 'loading' ? (
                                     <>

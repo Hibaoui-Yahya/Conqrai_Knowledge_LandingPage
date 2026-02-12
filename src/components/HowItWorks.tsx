@@ -24,14 +24,14 @@ const HowItWorks = () => {
     ];
 
     return (
-        <section id="how-it-works" className="py-24 bg-white">
+        <section id="how-it-works" className="py-12 md:py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-20 leading-tight tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 text-center mb-10 md:mb-20 leading-tight tracking-tight">
                     From unorganized data to <br />
                     <span className="text-primary">high-confidence execution.</span>
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {steps.map((step, idx) => (
                         <motion.div
                             key={idx}

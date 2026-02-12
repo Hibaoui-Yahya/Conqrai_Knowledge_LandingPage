@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 relative">
-                <div className="grid grid-cols-1 lg:grid-cols-[1.1fr,1fr] gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.1fr,1fr] gap-10 lg:gap-16 items-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const Hero = () => {
                             Industrial Knowledge Platform
                         </div>
 
-                        <h1 className="text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.05] tracking-tight mb-8">
+                        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.05] tracking-tight mb-8">
                             Stop searching manuals.<br />
                             <span className="text-gradient">Start executing procedures.</span>
                         </h1>
@@ -43,7 +43,7 @@ const Hero = () => {
                             </button>
                         </div>
 
-                        <div className="pt-8 border-t border-slate-200/60 flex gap-8 items-center">
+                        <div className="pt-8 border-t border-slate-200/60 flex gap-4 sm:gap-8 items-center">
                             <div className="flex items-center gap-2 text-sm font-semibold text-slate-400">
                                 <ShieldTick variant="Bold" size={20} className="text-primary" />
                                 Verified Knowledge

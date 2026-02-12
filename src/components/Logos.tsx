@@ -17,7 +17,7 @@ const Logos = () => {
                     Engineered for mission-critical operations in
                 </p>
 
-                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 md:gap-x-12 md:gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
                     {industries.map((name, i) => (
                         <div key={i} className="flex items-center gap-2 group cursor-default">
                             <div className="size-8 rounded bg-slate-100 flex items-center justify-center font-black text-[10px] text-slate-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors">

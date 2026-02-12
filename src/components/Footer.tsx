@@ -30,9 +30,9 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-white text-slate-500 py-24 pb-12 border-t border-slate-100">
+        <footer className="bg-white text-slate-500 py-12 md:py-24 pb-12 border-t border-slate-100">
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr,1fr,1fr] gap-16 mb-20">
+                <div className="grid grid-cols-2 lg:grid-cols-[1.5fr,1fr,1fr,1fr] gap-8 lg:gap-16 mb-12 lg:mb-20">
                     {/* Brand Column */}
                     <div className="space-y-8">
                         <div className="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
